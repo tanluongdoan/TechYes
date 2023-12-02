@@ -5,22 +5,65 @@ import PageFind from "@components/common/PageFind.astro";
 import CartButton from "@components/shop/CartButton.vue";
 import ColorSwitch from "@components/common/ColorSwitch.vue";
 import { t } from "@util/translate";
-import MyAccountButton from "./shop/MyAccountButton.vue";
+import MyAccountButton from "./MyAccountButton.vue";
 
-const { menu, title, social } = Astro.props;
 const currentPath = Astro.url.pathname.split("/")[1];
 
 const isActive = (href) => {
   if (currentPath === "" && href == "/") return true;
   if (currentPath !== "" && href.startsWith(`/${currentPath}`)) return true;
 };
+
+const { menu, title, social } = {
+  menu: [
+    {
+      href: "/blog",
+      label: "Blog",
+    },
+    {
+      href: "/shop",
+      label: "Shop",
+    },
+    {
+      href: "/work",
+      label: "Work",
+    },
+    {
+      href: "/menu/drinks",
+      label: "Menu",
+    },
+    {
+      href: "/about-nebulix",
+      label: "About",
+    },
+    {
+      href: "#contact",
+      label: "Contact",
+    },
+  ],
+  title: "Nebulix, a Fast &amp; Green Theme Based on Astro + Static CMS",
+  social: [
+    {
+      href: "https://github.com/unfolding-io/nebulix",
+      label: "github",
+      icon: "github",
+    },
+    {
+      href: "https://www.instagram.com/unfolding.io/",
+      label: "instagram",
+      icon: "instagram",
+    },
+    {
+      href: "https://wa.me/34649712625",
+      label: "Whatsapp",
+      icon: "whatsapp",
+    },
+  ],
+};
 ---
 
-<!-- <pre>
-  {JSON.stringify({ menu, title, social }, undefined, 1)}
-</pre> -->
-<header class="surface-menu nav sticky top-0 z-50" transition:name="nav">
-  <nav class="container-xl flex flex-nowrap items-stretch gap-6">
+<header class="surface-menu nav sticky top-0 z-10" transition:name="nav">
+  <nav class="container mx-auto flex flex-nowrap items-stretch gap-6">
     <a
       href="/"
       aria-label={title}
@@ -63,8 +106,9 @@ const isActive = (href) => {
           </li>
 
           <li>
-            <MyAccountButton />
+            <MyAccountButton client:idle />
           </li>
+
           <li class="md:hidden">
             <NavMobile
               client:idle

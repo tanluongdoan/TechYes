@@ -40,6 +40,7 @@ const openCart = () => {
 
 onMounted(() => {
   document.addEventListener("snipcart.ready", () => {
+    console.log("ready");
     Snipcart.store.subscribe(() => {
       count.value = Snipcart.store.getState().cart.items.count;
       shoppingState.value = Snipcart.store.getState();

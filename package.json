@@ -58,6 +58,7 @@
   "devDependencies": {
     "@tailwindcss/nesting": "^0.0.0-insiders.565cd3e",
     "cross-env": "^7.0.3",
+    "daisyui": "^4.4.17",
     "dotenv": "^16.3.1",
     "pagefind": "^1.0.4",
     "postcss-import": "^15.1.0",
