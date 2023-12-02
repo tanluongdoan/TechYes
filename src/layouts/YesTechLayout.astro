@@ -150,5 +150,14 @@ import GlobalNavigation from "@components/shop/GlobalNavigation.astro";
         });
       });
     </script>
+
+    <script>
+      const html = document.getElementsByTagName("html")[0];
+      const SmoothScroll = () => {
+        html.style["scroll-behavior"] = "auto";
+      };
+      SmoothScroll();
+      document.addEventListener("astro:beforeload", SmoothScroll);
+    </script>
   </body>
 </html>

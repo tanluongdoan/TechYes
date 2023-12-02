@@ -1,9 +1,7 @@
 <template>
-  <transition name="fade">
-    <button class="snipcart-customer-signin grid h-full place-items-center">
-      My Account
-    </button>
-  </transition>
+  <button class="snipcart-customer-signin grid h-full place-items-center">
+    My Account
+  </button>
 </template>
 
 <script setup>
