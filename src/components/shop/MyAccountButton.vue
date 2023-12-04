@@ -23,11 +23,11 @@ onMounted(() => {
       console.log("Customer signed out");
     });
 
-    Snipcart.subscribe("authentication.success", function (email) {
+    Snipcart.events.on("authentication.success", function (email) {
       console.log(email);
     });
 
-    Snipcart.subscribe("authentication.fail", function (email) {
+    Snipcart.events.on("authentication.fail", function (email) {
       console.log(email);
     });
   });
