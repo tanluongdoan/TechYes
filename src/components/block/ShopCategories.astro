@@ -6,10 +6,13 @@ import ItemCardSmall from "@components/cards/ItemCardSmall.astro";
 import ItemCardFlex from "@components/cards/ItemCardFlex.astro";
 import Intersecting from "@components/common/Intersecting.vue";
 import { slugify, getGridImageSizes } from "@util/helpers";
+import data from "@data/shopConfig.json";
 
 const base_url = import.meta.env.SHOP_SLUG;
 const { title, name, container, template, content, categories } = Astro.props;
-const { data } = await getEntry("config", "shop");
+// const { data } = await getEntry("config", "shop");
+
+// console.log(JSON.stringify(data));
 
 const posts = (await getCollection("product")).sort(
   (a, b) => a.data.date.valueOf() - b.data.date.valueOf(),

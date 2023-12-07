@@ -4,7 +4,7 @@ import type { CollectionEntry } from "astro:content";
 import PageLayoutSplit from "@layouts/PageLayoutSplit.astro";
 import PageLayoutWide from "@layouts/PageLayoutWide.astro";
 import type { AstroComponentFactory } from "astro/runtime/server/index.js";
-import posts from "@data/website_data.json";
+import posts from "@src/data/pages.json";
 
 export async function getStaticPaths() {
   // const posts = await getCollection("page");
@@ -34,10 +34,10 @@ const { ...post } = Astro.props;
   // Render a split-width page layout
   post.data.style.template === "split" && <PageLayoutSplit {...post.data} />
 }
-<!-- 
+
 <code>
   <pre
     class="w-full overflow-auto">
     {JSON.stringify(Astro.props, undefined, 1)}
   </pre>
-</code> -->
+</code>

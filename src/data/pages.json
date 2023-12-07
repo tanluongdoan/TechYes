@@ -243,7 +243,16 @@
           "template": "grid",
           "animate": false,
           "container": "md",
-          "categories": ["Merch", "Donations", "Licenses"],
+          "categories": [
+            "CPUs",
+            "GPUs",
+            "Storage",
+            "Motherboards",
+            "RAM",
+            "Merch",
+            "Donations",
+            "Licenses"
+          ],
           "component": "ShopCategories",
           "title": "Categories"
         },

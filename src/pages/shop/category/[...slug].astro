@@ -29,7 +29,7 @@ let { data } = await getEntry("config", "shop");
 /* GET HERO INFO FROM CONFIG */
 delete data.hero_buttons;
 const pageData = getCategoryData(data.product_categories, filter);
- 
+
 if (pageData && !pageData.overwrite_style) delete pageData.style;
 data = {
   ...data,
@@ -49,3 +49,10 @@ data = {
   {data}
   {base_url}
 />
+
+<code>
+  <pre
+    class="w-full overflow-auto">
+    {JSON.stringify(Astro.props, undefined, 1)}
+  </pre>
+</code>
