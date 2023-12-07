@@ -5,13 +5,13 @@ import { getCollection } from "astro:content";
 import PageLayoutArchive from "@layouts/PageLayoutArchive.astro";
 import { getPagination, getCategoryData, slugify } from "@util/helpers";
 import dataFromLocalJSON from "@data/products.json";
-import supabase from "@data/supabase";
+import supabase, { getProducts } from "@data/supabase";
 
 export async function getStaticPaths({ paginate }) {
   // let posts = await getCollection("product");
   // console.log(JSON.stringify(posts));
 
-  const { data: productData } = await supabase.from("CPUProducts").select("*");
+  const productData = await getProducts();
 
   // console.log(productData);
 

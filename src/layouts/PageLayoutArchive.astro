@@ -21,7 +21,9 @@ const productWrapClass = () => {
     return `grid auto-grid-${data.style.container} gap-4 pb-32`;
   if (style.hero_template === "image")
     return `flex flex-wrap justify-center pt-14 pb-20 flex-grid gap-x-4 gap-y-8`;
+  // return `flex flex-wrap gap-x-4 gap-y-8 justify-center pb-32 flex-grid `;
   return `flex flex-wrap gap-x-4 gap-y-8 justify-center pb-32 flex-grid `;
+  // return `grid gap-x-4 gap-y-8  pb-32 custom-grid`;
 };
 ---
 
@@ -44,7 +46,7 @@ const productWrapClass = () => {
       )}
       <ul class={`bloglist grid gap-4 pb-14`} data-pagefind-ignore="all">
         {page.data.map((post) => (
-          <li>
+          <li class="test">
             <Intersecting client:visible>
               <ItemCardSmall content={post} {base_url} animate={true} />
             </Intersecting>
@@ -88,7 +90,7 @@ const productWrapClass = () => {
       <section data-pagefind-ignore="all">
         <ul class={`${productWrapClass()}`}>
           {page.data.map((post) => (
-            <li>
+            <li class="custom-grid-item">
               <Intersecting client:visible>
                 {style.card_template === "grid" && (
                   <ItemCard content={post} {base_url} {sizes} animate={true} />
@@ -125,7 +127,8 @@ const productWrapClass = () => {
 	}
 	.flex-grid {
 		li {
-			@apply flex-1 flex justify-center;
+			/* @apply flex-1 flex justify-center; */
+			@apply basis-[248px] flex justify-center;
 		}
 	}
 </style>

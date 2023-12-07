@@ -17,7 +17,7 @@
       "in_stock": true,
       "is_digital": true,
       "guid": "c885f08d-9f81-4716-a59b-cc5691ec7e50",
-      "category": ["Donations", "CPUs"],
+      "category": ["Donations"],
       "variations": [
         {
           "name": "Drink",
@@ -189,7 +189,7 @@
       "in_stock": false,
       "is_digital": false,
       "shipping": { "weight": 8000 },
-      "category": ["Merch", "Style 2", "Style 3", "CPUs"],
+      "category": ["Merch", "Style 2", "Style 3"],
       "date": "2023-08-29T22:00:00.000Z",
       "style": { "container": "md" }
     }
@@ -540,7 +540,7 @@
       "min": 1,
       "is_digital": true,
       "guid": "63e306b9-3b35-4d7b-b4d6-419f058053cb",
-      "category": ["Licenses", "CPUs"],
+      "category": ["Licenses"],
       "variations": [
         {
           "name": "Number of domains",
