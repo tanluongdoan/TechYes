@@ -1,5 +1,5 @@
 ---
-import { getEntry } from "astro:content"; 
+import { getEntry } from "astro:content";
 import { marked } from "marked";
 import { Icon } from "astro-icon";
 import { t } from "@util/translate";
@@ -9,8 +9,6 @@ const today = new Date();
 let about = await getEntry("config", "about");
 let contact = await getEntry("config", "contact");
 let navigation = await getEntry("config", "navigation");
-
- 
 
 const showNewsletter = !!import.meta.env.NEWSLETTER_PROVIDER;
 ---
@@ -110,7 +108,7 @@ const showNewsletter = !!import.meta.env.NEWSLETTER_PROVIDER;
 
   <div class="relative w-full overflow-hidden">
     <div class="attribution container-xl grid place-items-start">
-      <a
+      <!-- <a
         href="https://unfolding.io"
         target="_blank"
         rel="noopener noreferrer"
@@ -128,7 +126,7 @@ const showNewsletter = !!import.meta.env.NEWSLETTER_PROVIDER;
             transform="translate(-152.13 -140.668)"
             fill="currentColor"></path>
         </svg>
-      </a>
+      </a> -->
     </div>
   </div>
   <slot />

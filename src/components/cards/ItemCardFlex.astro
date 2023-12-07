@@ -54,7 +54,12 @@ const animation = `hero_${animate ? content.slug : Math.random()}`;
         <p class=" line-clamp-3 py-1">{content.data.intro}</p>
       )
     }
-
+    {
+      content.data.intros &&
+        content.data.intros.map((intro) => (
+          <p class="balance line-clamp-3 py-1">{intro}</p>
+        ))
+    }
     {
       content.data.price && (
         <ProductPrice

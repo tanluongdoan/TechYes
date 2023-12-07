@@ -540,7 +540,7 @@
       "min": 1,
       "is_digital": true,
       "guid": "63e306b9-3b35-4d7b-b4d6-419f058053cb",
-      "category": ["Licenses"],
+      "category": ["Licenses", "CPUs"],
       "variations": [
         {
           "name": "Number of domains",
