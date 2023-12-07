@@ -14,6 +14,7 @@
       "@icons/*": ["src/icons/*"],
       "@src/*": ["src/*"],
       "@assets/*": ["src/assets/*"],
+      "@data/*": ["src/data/*"],
       "@locales/*": ["src/locales/*"]
     },
 

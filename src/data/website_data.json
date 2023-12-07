@@ -1,0 +1,331 @@
+[
+  {
+    "id": "about-nebulix.mdx",
+    "slug": "about-nebulix",
+    "body": "\n## Nebulix is released under CC BY-ND 4.0\n\nSo you are free to use it as long as you give credits, if you dont want an attribution in the footer of your site you can purchase a license [here](https://nebulix.unfolding.io/shop/nebulix-license/)\n\n## This template is create by Unfolding.io\n\nUnfolding is on a mission to help businesses create a lasting impact with durable and sustainable solutions.\n\nBased on the beautiful coast of Ibiza, we're inspired by the natural beauty around us and strive to bring that same sense of peace and tranquility to all of our projects. We aim to create a stress-free and enjoyable process for our clients, where we can work together to achieve outstanding results.\n\n### Premium Support\n\nIf you need help with setting up your website or you are in need for cutom integrations, dont hesitate to contact us at hello@unfolding.io\n",
+    "collection": "page",
+    "data": {
+      "title": "About Nebulix",
+      "description": "Explore Nebulix: The creative and sustainable template released under CC BY-ND 4.0. Crafted by Unfolding.io on Ibiza's serene coast. Discover our mission, commitment to clients, and premium support services",
+      "intro": "A creative and sustainable template forged by Unfolding.io along Ibiza's tranquil coast.",
+      "thumbnail": "/src/assets/ibiza.jpeg",
+      "template": "split",
+      "blocks": [],
+      "style": {
+        "template": "split",
+        "card_template": "grid",
+        "hero_template": "image",
+        "hero_surface": "surface-dark",
+        "hero_image_opacity": "0.6",
+        "container": "md",
+        "block_class": "my-0"
+      }
+    }
+  },
+  {
+    "id": "index.mdx",
+    "slug": "index",
+    "body": "\n## Astro powered, fast by design.\n\nExperience web performance at its zenith with Nebulix, driven by the speed-centric Astro framework. Your site will load in the blink of an eye, delivering an unparalleled user experience. Say goodbye to sluggishness and embrace the rapidity of Nebula for your website.\n",
+    "collection": "page",
+    "data": {
+      "title": "Nebulix, a Fast & Green Theme Based on Astro + Static CMS",
+      "description": "A Universe of Possibilities: Blogs, Portfolios, Restaurant Menus, Online Store, and Beyond",
+      "intro": "A Universe of Possibilities: Blogs, Portfolios, Restaurant Menus, Online Store, and Beyond",
+      "thumbnail": "/src/assets/nemulala.jpg",
+      "og_image": "/src/assets/og_image_nebulix.png",
+      "template": "full",
+      "container": "md",
+      "hero_template": "image",
+      "hero_buttons": [
+        {
+          "href": "#more",
+          "label": "Learn More",
+          "color": "surface-primary",
+          "icon": "down-line",
+          "icon_only": false
+        },
+        {
+          "href": "/blog/tag/docs",
+          "label": "docs",
+          "icon": "page",
+          "icon_only": false
+        }
+      ],
+      "blocks": [
+        {
+          "surface": "bg-slate-200 text-dark dark:bg-slate-900 dark:text-white",
+          "container": "lg",
+          "component": "Features",
+          "content": "## Nebulix Features\n\n\n\n\n",
+          "block_class": " py-20 text-center",
+          "features": [
+            {
+              "content": "### Tailwind CSS\n\nTransform your template's appearance with the beloved Tailwind CSS framework. Easily customize your design, bringing your unique vision to life.\n",
+              "color": "bg-[#38bdf8] text-white",
+              "icon": "tailwind"
+            },
+            {
+              "content": "### Webshop\n\nExperience a straightforward webshop, powered by SnapCart. It seamlessly handles product variations and even accommodates digital products.\n",
+              "color": "bg-[#fc0] text-black",
+              "icon": "shop"
+            },
+            {
+              "href": "",
+              "content": "### Page Block Builder\n\nCraft your perfect page effortlessly with our selection of versatile blocks. Customize and extend your page exactly the way you want it.\n",
+              "color": "surface-secondary",
+              "icon": "blocks-group-solid"
+            },
+            {
+              "content": "### Full-Text Search\n\nExperience lightning-fast full-text search capabilities with Pagefind. Our integrated search engine seamlessly enhances your site's user experience.\n",
+              "color": "surface-accent",
+              "icon": "book-search-24-regular"
+            },
+            {
+              "href": "",
+              "content": "### Multiple Templates\n\nTailor your website to perfection with a variety of templates for pages, blogs, shops, portfolios, and menus. Craft each page precisely as you envision.\n",
+              "color": "surface-success",
+              "icon": "template"
+            },
+            {
+              "href": "",
+              "content": "### Restaurant Menu\n\nExplore our user-friendly menu, thoughtfully designed with clear labels and detailed information about allergens for your dining peace of mind.\n",
+              "color": "surface-warning",
+              "icon": "menu"
+            },
+            {
+              "href": "#",
+              "content": "### Git-Based\n\nWith Astro + Static CMS, your content finds its home in a Git repository, ensuring efficient content management and collaboration.\n",
+              "color": "surface-primary",
+              "icon": "git"
+            },
+            {
+              "content": "### Light & Darkmode\n\nGive your visitors the freedom to choose their preferred color scheme, ensuring a personalized browsing experience.\n",
+              "color": "surface-dark",
+              "icon": "dark-theme-20-filled"
+            }
+          ]
+        },
+        {
+          "template": "column",
+          "animate": false,
+          "container": "md",
+          "component": "TextImage",
+          "reverse": true,
+          "title": "My Image",
+          "thumbnail": "/src/assets/perfect_pagespeed_scores.png",
+          "content": "## **A perfect page speed score** Optimized Speed and Accessibility\n\nOur perfect 100% page speed score and compliance with WCAG 2.1 AA standards reflect our commitment. We've optimized speed and accessibility, ensuring a superior user experience for all.\n",
+          "block_class": "",
+          "image_size": "66"
+        },
+        {
+          "template": "list",
+          "page_type": "blog",
+          "surface": "bg-slate-200 text-dark dark:bg-slate-800 dark:text-white",
+          "animate": true,
+          "container": "md",
+          "post_tag": ["Docs"],
+          "component": "RecentItems",
+          "title": "Check out our documentation",
+          "content": "Getting started is easy, just clone the repo, configure and you are ready to go.\n",
+          "count": 3
+        },
+        {
+          "template": "banner",
+          "animate": false,
+          "container": "none",
+          "component": "TextImage",
+          "reverse": true,
+          "title": "My Image",
+          "thumbnail": "/src/assets/nebulix_merch.jpeg",
+          "content": "## Nebulix Webshop\n\nDiscover the seamless integration of Snipcart, empowering you to efficiently oversee your store directly within a Static CMS. Whether your offerings include digital products or physical goods, Snipcart boasts a wealth of exceptional features, making it an ideal choice for the majority of small webshops. \n\nRead more about [SnipCart](https://snipcart.com/).\n",
+          "block_class": "my-0",
+          "image_size": "",
+          "aspect": null,
+          "buttons": [
+            {
+              "href": "/shop",
+              "label": "Demo Shop",
+              "color": "surface-primary",
+              "icon": "shop",
+              "icon_only": false
+            }
+          ]
+        },
+        {
+          "container": "sm",
+          "component": "RichText",
+          "content": "## Nebulix Portfolio\n\nNeed to show your skills, select a good template and build your portfolio with nebulix.\n",
+          "block_class": "py-20 text-center",
+          "buttons": [
+            {
+              "href": "/work",
+              "label": "Portfolio Demo",
+              "color": "surface-primary",
+              "icon": "portfolio",
+              "icon_only": false
+            }
+          ]
+        },
+        {
+          "template": "banner",
+          "animate": false,
+          "container": "none",
+          "component": "TextImage",
+          "reverse": false,
+          "title": "My Image",
+          "thumbnail": "/src/assets/cosmic_coctails_3.jpeg",
+          "content": "## Nebulix Restaurant Menus\n\nCreate a great menu, you can even shop arlercic information and labels. All menu's are mobile friendly and fast!\n\n\n\n\n\n\n\n\n",
+          "block_class": "my-0",
+          "image_size": "",
+          "buttons": [
+            {
+              "href": "/menu/drinks",
+              "label": "Demo Menu",
+              "color": "surface-primary",
+              "icon": "menu",
+              "icon_only": false
+            }
+          ]
+        }
+      ],
+      "style": {
+        "template": "full",
+        "card_template": "grid",
+        "hero_template": "image",
+        "hero_surface": "surface-dark",
+        "hero_image_opacity": "",
+        "container": "sm",
+        "page_class": "",
+        "content_class": "py-20 text-center"
+      }
+    }
+  },
+  {
+    "id": "license.mdx",
+    "slug": "license",
+    "body": "\n## License\n\nAll our website templates (except premium template) are licensed under Creative Commons Attribution 4.0 License (CC BY 4.0).\n\n## Legal Attribution for Free Templates\n\n[Unfolding.io](Unfolding.io) provides professionally designed mobile-friendly website templates. When you download or use our templates without paying, it will attribute the following conditions. Which means:\n\n### You are allowed to:\n\n- You are allowed to use templates for personal and business usage.\n- You are allowed to customize templates however you like.\n- You are allowed to convert/port HTML templates for use for any CMS.\n\n### Limitations for FREE versions:\n\n- You are not allowed to remove the copyright credit from the footer.\n- You are not allowed to sell, resale, rent, and lease our template.\n- We don’t provide any technical support for free HTML templates.\n\n**If you want to remove the attribution please purchase a [license](https://nebulix.unfolding.io/shop/nebulix-licence/)**\n",
+    "collection": "page",
+    "data": {
+      "title": "license",
+      "description": "legal stuff",
+      "thumbnail": "/src/assets/about-us.jpeg",
+      "template": "split",
+      "hero_buttons": [{ "href": "#more", "label": "more info" }],
+      "style": {
+        "template": "full",
+        "hero_template": "image",
+        "container": "md",
+        "page_class": "test-page",
+        "block_class": "text-center"
+      }
+    }
+  },
+  {
+    "id": "shop.mdx",
+    "slug": "shop",
+    "body": "",
+    "collection": "page",
+    "data": {
+      "title": "Interstellar Webshop",
+      "description": "Our online store is out of this world",
+      "intro": "Sell your goods in style",
+      "thumbnail": "/src/assets/nebulix_merch.jpeg",
+      "hero_buttons": [
+        {
+          "href": "#more",
+          "label": "Shop Now",
+          "icon": "down-line",
+          "icon_only": false
+        }
+      ],
+      "blocks": [
+        {
+          "template": "grid",
+          "animate": false,
+          "container": "md",
+          "categories": ["Merch", "Donations", "Licenses"],
+          "component": "ShopCategories",
+          "title": "Categories"
+        },
+        {
+          "template": "list",
+          "animate": false,
+          "container": "md",
+          "categories": ["Merch"],
+          "component": "ShopProducts",
+          "title": "Fresh Products",
+          "content": "Our define collection of fictional merch from the Draco Void Convergence, shipping time under 200 lightyears. check out our amazing collection.\n",
+          "count": 4
+        },
+        {
+          "template": "banner",
+          "animate": false,
+          "container": "none",
+          "component": "TextImage",
+          "reverse": false,
+          "title": "My Image",
+          "thumbnail": "/src/assets/cosmic_coffee_2.jpeg",
+          "content": "## **Caffeinate a developer** Brewing Inspiration, One Cup at a Time.\n\nSip on the satisfaction of knowing that your donation is a key ingredient in fueling creativity. Your support empowers artists, writers, musicians, and content creators to keep innovating, producing, and delighting the world with their work. With each cup of virtual coffee, you’re helping transform visions into reality.\n",
+          "block_class": "my-0",
+          "image_size": "50",
+          "buttons": [
+            {
+              "href": "#",
+              "label": "Buy me a coffee",
+              "color": "surface-success",
+              "icon_only": false
+            }
+          ]
+        },
+        {
+          "template": "flex",
+          "animate": false,
+          "container": "md",
+          "categories": ["Donations"],
+          "component": "ShopProducts",
+          "title": "",
+          "block_class": "mb-8",
+          "count": 10
+        },
+        {
+          "template": "column",
+          "surface": "surface-primary",
+          "animate": false,
+          "container": "md",
+          "component": "TextImage",
+          "reverse": true,
+          "title": "Magic bean bag",
+          "thumbnail": "/src/assets/nebulix-ben-bag.png",
+          "content": "## Merch Store\n\nExplore our Interstellar Webshop featuring products that are truly out of this world. Dive into a cosmic collection as vast as the universe itself.\n",
+          "block_class": "",
+          "image_size": "66",
+          "buttons": [
+            {
+              "href": "#",
+              "label": "Shop App productrs",
+              "color": "bg-[#fc0] text-black",
+              "icon": "shopping-cart",
+              "icon_only": false
+            }
+          ]
+        },
+        {
+          "template": "flex",
+          "animate": false,
+          "container": "md",
+          "categories": ["Merch"],
+          "component": "ShopProducts",
+          "count": 9
+        }
+      ],
+      "style": {
+        "template": "full",
+        "card_template": "grid",
+        "hero_template": "image",
+        "hero_surface": "surface-dark",
+        "hero_image_opacity": "0.6",
+        "container": "md"
+      }
+    }
+  }
+]
