@@ -4,12 +4,15 @@ import { getEntry } from "astro:content";
 import { getCollection } from "astro:content";
 import PageLayoutArchive from "@layouts/PageLayoutArchive.astro";
 import { getPagination, getCategoryData } from "@util/helpers";
+import posts from "@data/products.json";
 
 export async function getStaticPaths({ paginate }) {
-  let posts = await getCollection("product");
+  // let posts = await getCollection("product");
+
+  // console.log(JSON.stringify(posts));
 
   posts
-    .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+    // .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
     .filter((post) => !!post.data?.category);
 
   const { data } = await getEntry("config", "shop");
@@ -50,9 +53,9 @@ data = {
   {base_url}
 />
 
-<code>
+<!-- <code>
   <pre
     class="w-full overflow-auto">
     {JSON.stringify(Astro.props, undefined, 1)}
   </pre>
-</code>
+</code> -->

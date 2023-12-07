@@ -1,0 +1,704 @@
+[
+  {
+    "id": "buy-me-a-cocktail.mdx",
+    "slug": "buy-me-a-cocktail",
+    "body": "👩‍💻 **Empower Developers:** Fuel our genius of developers and designers with a range of carefully crafted cocktails designed to inspire creativity. Every sip is a step closer to breakthrough solutions.\n",
+    "collection": "product",
+    "data": {
+      "title": "Buy Me a Cocktail",
+      "id": "bd15d255-e458-4cd2-babf-271e05a45588",
+      "description": "Elevate Your Spirits: Code & Cocktails, make a developer happy.",
+      "intro": "Elevate Your Spirits: Code & Cocktails.",
+      "thumbnail": "/src/assets/cosmic_mojito.jpeg",
+      "price": 8.5,
+      "offer_price": 0,
+      "taxable": true,
+      "tax_included": true,
+      "in_stock": true,
+      "is_digital": true,
+      "guid": "c885f08d-9f81-4716-a59b-cc5691ec7e50",
+      "category": ["Donations", "CPUs"],
+      "variations": [
+        {
+          "name": "Drink",
+          "id": "4b080aee-6607-4406-bf25-54617f889b99",
+          "show_images": true,
+          "options": [
+            {
+              "label": "Mojito",
+              "id": "e958ed30-1fa1-45e8-8148-66fdfd60b1fd",
+              "price": 0
+            },
+            {
+              "label": "Moscow Mule",
+              "id": "5f289725-91a4-45a3-98a7-04ad51a1924c",
+              "price": 2.5,
+              "thumbnail": "/src/assets/cosmic_moscow_mule.jpeg"
+            },
+            {
+              "label": "GT",
+              "id": "6e04c420-a8e1-42fe-a75c-552b99b5a099",
+              "price": 4,
+              "thumbnail": "/src/assets/cosmic_gin_tonic.jpeg"
+            }
+          ]
+        }
+      ],
+      "date": "2023-09-03T10:31:47.439Z",
+      "style": { "container": "md" }
+    }
+  },
+  {
+    "id": "buy-me-a-coffee.mdx",
+    "slug": "buy-me-a-coffee",
+    "body": "\n\n\n\n**Unleash the Joy of Giving with \"Buy Me a Coffee\" Donation!**\n\nFuel your desire to make a positive impact by choosing our \"Buy Me a Coffee\" donation option. Your contribution goes beyond the caffeine fix—it's a direct investment in creators and their passion projects. Show your support in a tangible way that brings creators' dreams to life.\n",
+    "collection": "product",
+    "data": {
+      "title": "Buy Me a Coffee",
+      "id": "f1fa57c2-f65e-4b18-b110-7b12e4d7d350",
+      "description": "😊 Happy Developers: By caffeinating your  developer, you're not just getting the best out of them; you're also ensuring a cheerful and energetic work environment.",
+      "intro": "By caffeinating your developer, you're not just getting the best out of them; you're also ensuring a cheerful and energetic work environment.😊",
+      "thumbnail": "/src/assets/cosmic_coffee_5.jpeg",
+      "price": 3.5,
+      "offer_price": 0,
+      "taxable": true,
+      "tax_included": true,
+      "in_stock": true,
+      "is_digital": true,
+      "guid": "c885f08d-9f81-4716-a59b-cc5691ec7e50",
+      "category": ["Donations"],
+      "features": [
+        { "name": "Caffenation time", "value": "2h" },
+        { "name": "Gratitude ", "value": "Much applied" },
+        { "name": "Happy Meter", "value": "+5" }
+      ],
+      "variations": [
+        {
+          "name": "Coffee type",
+          "id": "dfd28e2b-132d-411e-b247-d9de2fa5fc20",
+          "show_images": true,
+          "options": [
+            {
+              "label": "Black ",
+              "id": "a304e0d8-efe9-45f5-8dd6-b25fbb0b2208",
+              "price": null,
+              "thumbnail": ""
+            },
+            {
+              "label": "Cappuccino ",
+              "id": "d3c790e1-e740-4e55-8284-1dd3f927d835",
+              "price": 0.7,
+              "thumbnail": "/src/assets/cappuchinno.jpeg"
+            },
+            {
+              "label": "Frappuccino ",
+              "id": "af05be51-7cc6-4d66-b3c4-65809fa5da67",
+              "price": 3,
+              "thumbnail": "/src/assets/cosmic_coffee_4.jpeg"
+            },
+            {
+              "label": "Kopi Luwak",
+              "id": "5bab2f47-4bc4-4e91-8fc6-c3c8888d5828",
+              "price": 9.49,
+              "thumbnail": "/src/assets/cosmic_coffee_3.jpeg"
+            }
+          ]
+        },
+        {
+          "name": "Cup",
+          "id": "665e7c08-53d9-453a-867c-9a6eb74faf5b",
+          "show_images": false,
+          "options": [
+            {
+              "label": "Paper Cup",
+              "id": "9eea0672-9ab8-4458-955f-91be64cf36b9",
+              "price": 0,
+              "thumbnail": "/src/assets/paper_cup.jpeg"
+            },
+            {
+              "label": "Eco plastic cup",
+              "id": "57e01ab2-e3c9-4927-b883-b874ffa10f04",
+              "price": 0.7,
+              "thumbnail": "/src/assets/plastic_cup.jpeg"
+            },
+            {
+              "label": "Stainless Steel Mug",
+              "id": "8d83a3f7-1bdd-4763-bc70-079adac21a97",
+              "price": 10,
+              "thumbnail": "/src/assets/steel_mug.jpeg"
+            },
+            {
+              "label": "Ceramic Kitten Cup",
+              "id": "35e18e7c-4d28-4f17-9df1-ecf922cb289a",
+              "price": 16.7,
+              "thumbnail": "/src/assets/kitten_mug.jpeg"
+            }
+          ]
+        },
+        {
+          "name": "Name on Cup",
+          "id": "f716303e-d810-430c-98e6-83547cf0b130",
+          "show_images": false
+        }
+      ],
+      "date": "2023-09-03T12:16:13.510Z",
+      "style": {
+        "template": "full",
+        "hero_template": "image",
+        "container": "md"
+      }
+    }
+  },
+  {
+    "id": "buy-me-a-lambo.mdx",
+    "slug": "buy-me-a-lambo",
+    "body": "Have you ever dreamt of cruising in a Lamborghini, feeling the power of innovation and design at your fingertips? \"Rev Up a Dream - Lamborghini for Developers\" is here to make that dream a reality, while also spreading joy in the developer community.\n",
+    "collection": "product",
+    "data": {
+      "title": "Buy Me a Lambo",
+      "id": "5944d782-fee2-4728-9ce2-43b0577e7e52",
+      "description": "Rev Up a Dream - Lamborghini for Developers",
+      "intro": "Rev Up a Dream - Lamborghini for Developers",
+      "thumbnail": "/src/assets/lamborghini.jpeg",
+      "price": 1000000,
+      "offer_price": 900000,
+      "taxable": true,
+      "tax_included": true,
+      "in_stock": false,
+      "is_digital": true,
+      "guid": "asdasd",
+      "category": ["Donations"],
+      "date": "2023-09-03T10:31:47.439Z",
+      "style": { "container": "md" }
+    }
+  },
+  {
+    "id": "cosmic-bean-bag.mdx",
+    "slug": "cosmic-bean-bag",
+    "body": "",
+    "collection": "product",
+    "data": {
+      "title": "Cosmic Bean Bag",
+      "id": "4ca21535-c9b8-4c7c-93b6-827a8e9498cc",
+      "description": "Cosmic Bean Bag",
+      "thumbnail": "/src/assets/nebulix-ben-bag.png",
+      "price": 293,
+      "offer_price": 0,
+      "taxable": true,
+      "tax_included": false,
+      "in_stock": false,
+      "is_digital": false,
+      "shipping": { "weight": 8000 },
+      "category": ["Merch", "Style 2", "Style 3", "CPUs"],
+      "date": "2023-08-29T22:00:00.000Z",
+      "style": { "container": "md" }
+    }
+  },
+  {
+    "id": "cosmic-bucket.mdx",
+    "slug": "cosmic-bucket",
+    "body": "",
+    "collection": "product",
+    "data": {
+      "title": "Cosmic Bucket",
+      "id": "c2f34229-c540-4d41-913e-4c00cac3c47a",
+      "description": "Cosmic Bucket",
+      "thumbnail": "/src/assets/nebulix-bucket.png",
+      "price": 34.5,
+      "offer_price": 0,
+      "taxable": true,
+      "tax_included": false,
+      "in_stock": false,
+      "is_digital": false,
+      "shipping": { "weight": 420 },
+      "category": ["Merch", "Style 2", "Style 3"],
+      "date": "2023-08-28T20:42:48.308Z",
+      "style": { "container": "md" }
+    }
+  },
+  {
+    "id": "cosmic-cap.mdx",
+    "slug": "cosmic-cap",
+    "body": "",
+    "collection": "product",
+    "data": {
+      "title": "Cosmic Cap",
+      "id": "3849a49c-6493-48f4-a3c1-6771b6a626b4",
+      "description": "Cosmic Cap",
+      "thumbnail": "/src/assets/nebulix_water_cap-1.png",
+      "price": 69.5,
+      "offer_price": 49.5,
+      "taxable": true,
+      "tax_included": false,
+      "in_stock": false,
+      "is_digital": false,
+      "shipping": { "weight": 242 },
+      "category": ["Merch", "Style 2", "Style 3"],
+      "variations": [
+        {
+          "name": "Cap type",
+          "id": "84ffe208-d8ef-400d-b1e7-b9e198225a70",
+          "show_images": true,
+          "options": [
+            {
+              "label": "Base",
+              "id": "a6ce98e2-a546-4186-9806-f7e4fa7fbc61",
+              "price": 0
+            },
+            {
+              "label": "Delux",
+              "id": "5ae7bbff-cb85-43b1-860f-269bf31648cc",
+              "price": 2,
+              "thumbnail": "/src/assets/nebulix_water_cap-2.png"
+            }
+          ]
+        }
+      ],
+      "date": "2023-08-28T20:42:48.308Z",
+      "style": { "container": "md" }
+    }
+  },
+  {
+    "id": "cosmic-dino.mdx",
+    "slug": "cosmic-dino",
+    "body": "",
+    "collection": "product",
+    "data": {
+      "title": "Cosmic Dino",
+      "id": "c9eca6f5-0b21-4830-b967-9b1f042f99e1",
+      "description": "cosmic Dino",
+      "thumbnail": "/src/assets/nebula_pluche-drago2.png",
+      "price": 99,
+      "offer_price": 0,
+      "taxable": true,
+      "tax_included": false,
+      "in_stock": false,
+      "is_digital": false,
+      "shipping": { "weight": 500 },
+      "category": ["Merch", "Style 2", "Style 3"],
+      "date": "2023-08-28T20:42:48.308Z",
+      "style": { "container": "md" }
+    }
+  },
+  {
+    "id": "cosmic-drago.mdx",
+    "slug": "cosmic-drago",
+    "body": "",
+    "collection": "product",
+    "data": {
+      "title": "Cosmic Drago",
+      "id": "47d69380-475b-4c99-b94d-c6d0dc7e5e49",
+      "description": "Cosmic Drago",
+      "thumbnail": "/src/assets/nebula_pluche-drago.png",
+      "price": 96,
+      "offer_price": 0,
+      "taxable": true,
+      "tax_included": false,
+      "in_stock": false,
+      "is_digital": false,
+      "shipping": { "weight": 497 },
+      "category": ["Merch", "Style 2", "Style 3"],
+      "date": "2023-08-28T20:42:48.308Z",
+      "style": { "container": "md" }
+    }
+  },
+  {
+    "id": "cosmic-hoodie.mdx",
+    "slug": "cosmic-hoodie",
+    "body": "",
+    "collection": "product",
+    "data": {
+      "title": "Cosmic Hoodie",
+      "id": "5b358008-4dbc-465d-826e-234202004a7d",
+      "description": "Cosmic Hoodie",
+      "thumbnail": "/src/assets/nebulix_hoodie.png",
+      "price": 99.95,
+      "offer_price": 0,
+      "taxable": true,
+      "tax_included": false,
+      "in_stock": false,
+      "is_digital": false,
+      "shipping": { "weight": 649 },
+      "category": ["Merch", "Style 2", "Style 3"],
+      "date": "2023-08-28T20:42:48.308Z",
+      "style": { "container": "md" }
+    }
+  },
+  {
+    "id": "cosmic-kitten.mdx",
+    "slug": "cosmic-kitten",
+    "body": "",
+    "collection": "product",
+    "data": {
+      "title": "Cosmic Kitten",
+      "id": "65c6bebf-6fab-44b9-afd4-bb3c4a3ed890",
+      "description": "prrrrrrrrrr",
+      "thumbnail": "/src/assets/nebula_pluche-cat.png",
+      "price": 99,
+      "offer_price": 0,
+      "taxable": true,
+      "tax_included": false,
+      "in_stock": false,
+      "is_digital": false,
+      "shipping": { "weight": 500 },
+      "category": ["Merch", "Style 2", "Style 3"],
+      "date": "2023-08-28T20:42:48.308Z",
+      "style": { "container": "md" }
+    }
+  },
+  {
+    "id": "cosmic-nebulix.mdx",
+    "slug": "cosmic-nebulix",
+    "body": "Step into a world of wonder and imagination with our Nebula Style Cute Nebulix Plushie. Crafted with attention to detail, this plushie brings the captivating beauty of the cosmos right into your hands. Let your imagination take flight as you embark on cosmic adventures, exploring galaxies, stars, and nebulas while cuddling up with this soft and enchanting plushie. Whether it's a bedtime companion or a conversation starter on your couch, let the universe embrace you with every hug.\n",
+    "collection": "product",
+    "data": {
+      "title": "Cosmic Nebulix",
+      "id": "7c0555b3-d7b8-4e05-89c4-887db0adffea",
+      "description": "Unveil the Cosmos in Your Hands with the Nebula Style Cute Nebulix Plushie!",
+      "intro": "Unveil the Cosmos in Your Hands with the Nebula Style Cute Nebulix Plushie!",
+      "thumbnail": "/src/assets/nebula_pluche-nebulix.png",
+      "price": 99,
+      "offer_price": 0,
+      "taxable": true,
+      "tax_included": false,
+      "in_stock": false,
+      "is_digital": false,
+      "shipping": { "weight": 500, "height": 75, "width": 1000, "length": 75 },
+      "category": ["Merch", "Style 2", "Style 3"],
+      "features": [
+        { "name": "Made in", "value": "Draco Void Convergence" },
+        { "name": "Height", "value": "85cm" },
+        { "name": "Weight", "value": "900g" },
+        { "name": "Material ", "value": "100% Star Dust" }
+      ],
+      "date": "2023-08-29T09:24:13.756Z",
+      "style": { "container": "md" }
+    }
+  },
+  {
+    "id": "cosmic-t-shirt.mdx",
+    "slug": "cosmic-t-shirt",
+    "body": "",
+    "collection": "product",
+    "data": {
+      "title": "Cosmic T-shirt",
+      "id": "568d4f8a-eeb0-4de6-a614-c015be7bb61a",
+      "description": "Cosmic T-shirt",
+      "thumbnail": "/src/assets/nebulix-tshirt-2.png",
+      "price": 44.95,
+      "offer_price": 0,
+      "taxable": true,
+      "tax_included": false,
+      "in_stock": false,
+      "is_digital": false,
+      "shipping": { "weight": 240 },
+      "category": ["Merch", "Style 2", "Style 3"],
+      "date": "2023-08-28T20:42:48.308Z",
+      "style": { "container": "md" }
+    }
+  },
+  {
+    "id": "cosmic-water-bottle.mdx",
+    "slug": "cosmic-water-bottle",
+    "body": "",
+    "collection": "product",
+    "data": {
+      "title": "Cosmic Water Bottle",
+      "id": "da60bbd1-378f-46a1-a901-19dba67b9315",
+      "description": "Cosmic Water Bottle",
+      "thumbnail": "/src/assets/nebulix_water_bottle.png",
+      "price": 69,
+      "offer_price": 0,
+      "taxable": true,
+      "tax_included": false,
+      "in_stock": false,
+      "is_digital": false,
+      "shipping": { "weight": 420 },
+      "category": ["Merch", "Style 2", "Style 3"],
+      "date": "2023-08-28T20:42:48.308Z",
+      "style": { "container": "md" }
+    }
+  },
+  {
+    "id": "cosmic-wizard.mdx",
+    "slug": "cosmic-wizard",
+    "body": "",
+    "collection": "product",
+    "data": {
+      "title": "Cosmic Wizard",
+      "id": "bdcfd82a-1011-4775-abcb-0710baad0847",
+      "description": "Cosmic Wizard",
+      "thumbnail": "/src/assets/nebula_pluche-wizy.png",
+      "price": 99.5,
+      "offer_price": 75,
+      "taxable": true,
+      "tax_included": false,
+      "in_stock": false,
+      "is_digital": false,
+      "shipping": { "weight": 500 },
+      "category": ["Merch", "Style 2", "Style 3"],
+      "date": "2023-08-28T20:42:48.308Z",
+      "style": { "container": "md" }
+    }
+  },
+  {
+    "id": "cutie-beans.mdx",
+    "slug": "cutie-beans",
+    "body": "",
+    "collection": "product",
+    "data": {
+      "title": "Cutie Beans",
+      "id": "de9dc2e6-7f46-47f2-ba14-fa85017dd61f",
+      "description": "Cutie Beans",
+      "thumbnail": "/src/assets/nebula_pluche-cuty.png",
+      "price": 99,
+      "offer_price": 0,
+      "taxable": true,
+      "tax_included": false,
+      "in_stock": false,
+      "is_digital": false,
+      "shipping": { "weight": 499 },
+      "category": ["Merch", "Style 2", "Style 3"],
+      "date": "2023-08-28T20:42:48.308Z",
+      "style": { "container": "md" }
+    }
+  },
+  {
+    "id": "i-love-nebulix-t-shirt.mdx",
+    "slug": "i-love-nebulix-t-shirt",
+    "body": "asdadads\n",
+    "collection": "product",
+    "data": {
+      "title": "I 😍 Nebulix T-shirt",
+      "id": "f2f4b26b-8ad5-46e6-aa48-f25a7af0f395",
+      "description": "A t-shirt to love",
+      "intro": "Want to look great and fashy? ",
+      "thumbnail": "/src/assets/t-shitrt-nebulix-3.jpg",
+      "price": 24.5,
+      "offer_price": 22.5,
+      "taxable": true,
+      "tax_included": true,
+      "in_stock": false,
+      "min": 1,
+      "is_digital": false,
+      "shipping": { "weight": 198 },
+      "category": ["Merch", "Style 2", "Style 3"],
+      "variations": [
+        {
+          "name": "Size",
+          "id": "beac30fb-a77c-4677-a8ed-66fe2ca2689b",
+          "show_images": false,
+          "options": [
+            {
+              "label": "S",
+              "id": "e24145d6-ea6d-4657-bfcc-0a97fd0315f9",
+              "price": 0
+            },
+            {
+              "label": "M",
+              "id": "3e7c40e6-76ba-4701-88d7-516348a4436e",
+              "price": 0
+            },
+            {
+              "label": "L",
+              "id": "73747865-280e-4e8e-9883-0010c9a8e579",
+              "price": 0
+            },
+            {
+              "label": "XL",
+              "id": "d4e916ce-d194-4bf1-917e-d0cbf7d4d258",
+              "price": 0
+            },
+            {
+              "label": "XXL",
+              "id": "51a7d7e3-0634-48d1-8477-6f97802a888f",
+              "price": 0
+            }
+          ]
+        }
+      ],
+      "date": "2023-08-28T18:32:35.771Z",
+      "style": { "container": "md" }
+    }
+  },
+  {
+    "id": "nebulix-license.mdx",
+    "slug": "nebulix-license",
+    "body": "\n**New License Option**\n\nWant to remove attribution from your Nebulix website? You can now purchase a license that's identical to the previous one but without the requirement to display it in your footer.\n\n**Subdomains Included**\n\nWith one license, you can remove attribution for 1 main domain and up to 3 subdomains. For instance: `www.my-domain.com`, `shop.my-domain.com`, `blog.my-domain.com`, and `menu.my-domain.com`.\n",
+    "collection": "product",
+    "data": {
+      "title": "Nebulix license",
+      "id": "11c97986-de60-4533-a893-cd23096da615",
+      "description": "Upgrade your Nebulix experience with our new license option. Remove attribution. ",
+      "intro": "If you wish to eliminate the \"powered by\"",
+      "thumbnail": "/src/assets/nebulix-00-start.jpg",
+      "price": 149.95,
+      "offer_price": 0,
+      "taxable": true,
+      "tax_included": true,
+      "in_stock": true,
+      "min": 1,
+      "is_digital": true,
+      "guid": "63e306b9-3b35-4d7b-b4d6-419f058053cb",
+      "category": ["Licenses"],
+      "variations": [
+        {
+          "name": "Number of domains",
+          "id": "5b8159a1-0a81-4ec1-8a36-a9611f57775a",
+          "show_images": false,
+          "options": [
+            {
+              "label": "One",
+              "id": "77328fa4-e5a6-4387-bc42-89125ecc659f",
+              "price": 0
+            },
+            {
+              "label": "Three",
+              "id": "ce6a3d00-ff43-48c9-847b-d94774e170cc",
+              "price": 209.05
+            },
+            {
+              "label": "Five",
+              "id": "956b9b46-947a-40dd-b39b-81672726f17e",
+              "price": 374.05
+            }
+          ]
+        },
+        {
+          "name": "Domain(s)",
+          "id": "0b56fca3-b6a6-4cf1-b2f1-78eca3a72599",
+          "show_images": false
+        }
+      ],
+      "date": "2023-09-03T10:31:47.439Z",
+      "style": { "container": "md" }
+    }
+  },
+  {
+    "id": "sneaker.mdx",
+    "slug": "sneaker",
+    "body": "\nThese celestial-inspired kicks are designed for those who want to stand out and make a statement. With their unique design and high-quality craftsmanship, Cosmic Sneakers are more than just shoes; they're an expression of your personality.\n",
+    "collection": "product",
+    "data": {
+      "title": "Sneaker",
+      "id": "67475236-5a07-4501-bf06-a8ec54a9c183",
+      "description": "These celestial-inspired kicks are designed for those who want to stand out and make a statement. With their unique design and high-quality craftsmanship, Cosmic Sneakers are more than just shoes; they're an expression of your personality.",
+      "thumbnail": "/src/assets/nebulix-sneakers.png",
+      "price": 595,
+      "offer_price": 0,
+      "taxable": false,
+      "tax_included": false,
+      "in_stock": false,
+      "is_digital": false,
+      "shipping": { "weight": 200 },
+      "category": ["Style 2", "Style 3", "Merch"],
+      "variations": [
+        {
+          "name": "Sneaker type",
+          "id": "f604d9aa-92a2-4af4-847a-7adaf9e8cfc3",
+          "show_images": true,
+          "options": [
+            {
+              "label": "High",
+              "id": "d8ee6fe8-4e28-4bdf-81c5-f474bf302e46",
+              "price": 0
+            },
+            {
+              "label": "Low",
+              "id": "ea5af1e0-501d-444f-bc26-3c0048e42864",
+              "price": 0,
+              "thumbnail": "/src/assets/nebulix_sneaker-2.png"
+            }
+          ]
+        },
+        {
+          "name": "Size",
+          "id": "262a41d1-4415-4dc5-b6ff-8a357c83fceb",
+          "show_images": false,
+          "options": [
+            {
+              "label": "7",
+              "id": "9958906c-9727-4a1a-8f4a-01da37c02402",
+              "price": 0
+            },
+            {
+              "label": "7.5",
+              "id": "8ac41365-65e2-4e6c-88f1-28caeb4d811e",
+              "price": 0
+            },
+            {
+              "label": "8",
+              "id": "b9aa80a0-f404-4ef1-a524-3fdabe5cd871",
+              "price": 0
+            },
+            {
+              "label": "8.5",
+              "id": "f624ec26-b04f-4654-b616-274b4a9b959e",
+              "price": 0
+            },
+            {
+              "label": "9",
+              "id": "3920ef7d-035a-4bd7-999b-0ffe2fb56a38",
+              "price": 0
+            }
+          ]
+        }
+      ],
+      "date": "2023-08-28T20:42:48.308Z",
+      "style": { "container": "md" }
+    }
+  },
+  {
+    "id": "starfunnel-license.mdx",
+    "slug": "starfunnel-license",
+    "body": "\n**New License Option**\n\nWant to remove attribution from your StarFunnel website? You can now purchase a license that's identical to the previous one but without the requirement to display it in your footer.\n\n\n[Check out the StarFunnel Theme](https://starfunnel.unfolding.io/)\n\n\n**Subdomains Included**\n\nWith one license, you can remove attribution for 1 main domain and up to 3 subdomains. For instance: `www.my-domain.com`, `shop.my-domain.com`, `blog.my-domain.com`, and `menu.my-domain.com`.\n",
+    "collection": "product",
+    "data": {
+      "title": "StarFunnel license",
+      "id": "11c97986-de60-4533-ZZ893-cd23096da998",
+      "description": "Upgrade your Starfunnel experience with our new license option. Remove attribution. ",
+      "intro": "If you wish to eliminate the \"powered by\"",
+      "thumbnail": "/src/assets/starfunnel.jpg",
+      "price": 149.95,
+      "offer_price": 0,
+      "taxable": true,
+      "tax_included": true,
+      "in_stock": true,
+      "min": 1,
+      "is_digital": true,
+      "guid": "63e306b9-3b35-4d7b-b4d6-419f058053cb",
+      "category": ["Licenses"],
+      "variations": [
+        {
+          "name": "Number of domains",
+          "id": "5b8159a1-0a81-4ec1-8a36-a9611f57775a",
+          "show_images": false,
+          "options": [
+            {
+              "label": "One",
+              "id": "77328fa4-e5a6-4387-bc42-89125ecc659f",
+              "price": 0
+            },
+            {
+              "label": "Three",
+              "id": "ce6a3d00-ff43-48c9-847b-d94774e170cc",
+              "price": 209.05
+            },
+            {
+              "label": "Five",
+              "id": "956b9b46-947a-40dd-b39b-81672726f17e",
+              "price": 374.05
+            }
+          ]
+        },
+        {
+          "name": "Domain(s)",
+          "id": "0b56fca3-b6a6-4cf1-b2f1-78eca3a72599",
+          "show_images": false
+        }
+      ],
+      "date": "2023-09-03T10:31:47.439Z",
+      "style": { "container": "md" }
+    }
+  }
+]
