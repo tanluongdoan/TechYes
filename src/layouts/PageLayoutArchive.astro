@@ -27,46 +27,7 @@ const productWrapClass = () => {
 };
 ---
 
-{
-  template === "split" && (
-    <PageLayoutSplit
-      {...page}
-      {...data}
-      {base_url}
-      {filters}
-      {filter}
-      {filter_type}
-      {tag}
-    >
-      {data.body && data.body !== " " && (
-        <div
-          class={`richtext ${data.style.content_class || "pb-14"}`}
-          set:html={marked.parse(data.body)}
-        />
-      )}
-      <ul class={`bloglist grid gap-4 pb-14`} data-pagefind-ignore="all">
-        {page.data.map((post) => (
-          <li class="test">
-            <Intersecting client:visible>
-              <ItemCardSmall content={post} {base_url} animate={true} />
-            </Intersecting>
-          </li>
-        ))}
-      </ul>
-
-      {page.lastPage > 1 && (
-        <div class="-mb-14 mt-auto w-full pb-4 pt-20">
-          <Pager
-            totalPage={page.lastPage}
-            currentPage={page.currentPage}
-            url={pagerSlug}
-          />
-        </div>
-      )}
-    </PageLayoutSplit>
-  )
-}
-
+<!-- {template} -->{page.data.count}
 {
   template === "full" && (
     <PageLayoutWide
@@ -102,6 +63,7 @@ const productWrapClass = () => {
             </li>
           ))}
         </ul>
+        {style.card_template}
         {page.lastPage > 1 && (
           <div class="container-md pb-4">
             <Pager

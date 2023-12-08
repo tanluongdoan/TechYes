@@ -5,6 +5,7 @@ import { getCollection } from "astro:content";
 import PageLayoutArchive from "@layouts/PageLayoutArchive.astro";
 import { getPagination, getCategoryData, slugify } from "@util/helpers";
 import dataFromLocalJSON from "@data/products.json";
+import dataFromShopJSON from "@data/shopConfig.json";
 import supabase, { getProducts } from "@data/supabase";
 
 export async function getStaticPaths({ paginate }) {
@@ -21,27 +22,27 @@ export async function getStaticPaths({ paginate }) {
     // .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
     .filter((post) => !!post.data?.category);
 
-  const { data } = await getEntry("config", "shop");
+  // const { data } = await getEntry("config", "shop");
   const allFilters = posts
     .map((post) => post.data.category)
     .filter((post) => !!post);
 
   const filters = [...new Set(allFilters.flat(1))];
 
-  return getPagination(posts, filters, data, "category");
+  return getPagination(posts, filters, dataFromShopJSON, "category");
 }
 const base_url = import.meta.env.SHOP_SLUG;
 const { lastPage, currentPage, page, filter, filters, filter_type } =
   Astro.props;
-let { data } = await getEntry("config", "shop");
+// let { data } = await getEntry("config", "shop");
 
 /* GET HERO INFO FROM CONFIG */
-delete data.hero_buttons;
-const pageData = getCategoryData(data.product_categories, filter);
+// delete data.hero_buttons;
+const pageData = getCategoryData(dataFromShopJSON.product_categories, filter);
 
 if (pageData && !pageData.overwrite_style) delete pageData.style;
-data = {
-  ...data,
+let data = {
+  ...dataFromShopJSON,
   ...pageData,
 };
 ---
@@ -59,9 +60,9 @@ data = {
   {base_url}
 />
 
-<!-- <code>
-  <pre
-    class="w-full overflow-auto">
-    {JSON.stringify(Astro.props, undefined, 1)}
+<code>
+  <pre>
+    {page[0]} - {lastPage} - {currentPage}
+    <!-- {JSON.stringify(page[0], undefined, 1)} -->
   </pre>
-</code> -->
+</code>
