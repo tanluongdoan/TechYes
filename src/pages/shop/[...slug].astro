@@ -10,15 +10,20 @@ import AddToCart from "@components/shop/AddToCart.astro";
 import ProductVariations from "@components/shop/ProductVariations.astro";
 import ShippingDimensions from "@components/shop/ShippingDimensions.astro";
 import { t } from "@util/translate";
+import { getProducts } from "@src/data/supabase";
 
 export async function getStaticPaths() {
-  const posts = (await getCollection("product")).sort(
-    (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
-  );
+  // const posts = (await getCollection("product")).sort(
+  //   (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+  // );
+
+  const posts = await getProducts();
   const count = posts.length;
   return posts.flatMap((post, index) => {
-    let next: CollectionEntry<"product"> | null = null;
-    let prev: CollectionEntry<"product"> | null = null;
+    // let next: CollectionEntry<"product"> | null = null;
+    // let prev: CollectionEntry<"product"> | null = null;
+    let next: any = null;
+    let prev: any = null;
     const archiveNav = getArchiveNav(count, index, posts);
 
     next = archiveNav.next;
@@ -50,7 +55,7 @@ export async function getStaticPaths() {
 type Props = CollectionEntry<"product">;
 const base_url = import.meta.env.SHOP_SLUG;
 const post = Astro.props;
-const { Content } = await post.render();
+// const { Content } = await post.render();
 let searchFilters = [`${t("content")}:${base_url}`];
 
 if (post?.data?.category) {
@@ -110,9 +115,6 @@ const filter = post.data?.category
 
 <ProductLayoutSplit {...post.data} {base_url} {variation_images}>
   <Breadcrumb title={post.data.title} slot="breadcrumb" filter={filter} />
-  <div class="richtext">
-    <Content />
-  </div>
   {
     product.variations && (
       <ProductVariations

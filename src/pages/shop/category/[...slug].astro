@@ -11,54 +11,9 @@ export async function getStaticPaths({ paginate }) {
   // let posts = await getCollection("product");
   // console.log(JSON.stringify(posts));
 
-  const productData = await getProducts();
+  const dataFromSupabase = await getProducts();
 
-  // console.log(productData);
-
-  let dataFromSupabase: any[] = [];
-
-  if (productData) {
-    dataFromSupabase = productData.map(
-      ({
-        ProductCode,
-        ProductDescription,
-        ProductCategory,
-        ProductTitle,
-        SortPrice,
-        FeaturedImage,
-        AllImages,
-        CPURange,
-        CPUCores,
-        SocketType,
-        Brand,
-      }) => {
-        return {
-          id: ProductCode,
-          slug: slugify(ProductTitle),
-          body: "",
-          collection: "product",
-          data: {
-            // title: ProductTitle,
-            title: "",
-            id: ProductCode,
-            intro: `${ProductTitle}`,
-            // intros: [SocketType, CPUCores],
-            thumbnail: FeaturedImage,
-            price: SortPrice,
-            offer_price: 0,
-            taxable: true,
-            tax_included: false,
-            in_stock: true,
-            is_digital: false,
-            shipping: { weight: 649 },
-            category: ["Merch", "Style 2", "Style 3", ProductCategory],
-            date: "2023-08-28T20:42:48.308Z",
-            style: { container: "md" },
-          },
-        };
-      },
-    );
-  }
+  // console.log(dataFromSupabase);
 
   let posts: any[] = [...dataFromSupabase, ...dataFromLocalJSON];
 

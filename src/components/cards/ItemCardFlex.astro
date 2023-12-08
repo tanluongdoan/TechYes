@@ -46,7 +46,7 @@ const animation = `hero_${animate ? content.slug : Math.random()}`;
         </span>
       )
     }
-    <h2 class="subtitle balance font-bold group-hover:text-primary">
+    <h2 class="balance mb-3 group-hover:text-primary">
       {content.data.title}
     </h2>
     {
@@ -57,6 +57,7 @@ const animation = `hero_${animate ? content.slug : Math.random()}`;
     {
       content.data.price && (
         <ProductPrice
+          priceDisplay={content.data.priceDisplay}
           price={content.data.price}
           offer_price={content.data.offer_price}
           in_stock={content.data.in_stock}

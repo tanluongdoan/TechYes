@@ -1,5 +1,5 @@
 ---
-const { title, filter } = Astro.props;
+const { intro, title, filter } = Astro.props;
 import { slugify } from "@util/helpers";
 const urlArray = Astro.url.pathname.split("/");
 import { Icon } from "astro-icon";
@@ -52,7 +52,7 @@ import { Icon } from "astro-icon";
     class="flex max-w-xs shrink content-center items-center"
   >
     <span itemprop="name" class="line-clamp-1 opacity-80">
-      {title}
+      {title || intro}
       <meta itemprop="position" content={filter ? "3" : "2"} />
     </span>
   </li>
