@@ -12,12 +12,15 @@ import { Icon } from "astro-icon";
 import { t } from "@util/translate";
 import "@fontsource-variable/inter-tight";
 import "@fontsource-variable/inter-tight/wght-italic.css";
+import navigation from "@data/navigation.json";
 
 const lang = import.meta.env.WEBSITE_LANGUAGE;
 const currency = import.meta.env.CURRENCY;
 const snipcartKey = import.meta.env.SNIPCART_KEY;
 const { title, description, pageClass, thumbnail, og_image } = Astro.props;
-const navigation = await getEntry("config", "navigation");
+// const navigation = await getEntry("config", "navigation");
+
+// console.log(JSON.stringify(navigation));
 const about = await getEntry("config", "about");
 const contact = await getEntry("config", "contact");
 ---

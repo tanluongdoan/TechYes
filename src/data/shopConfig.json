@@ -21,6 +21,7 @@
       "body": "\n\n\n",
       "overwrite_style": false
     },
+
     {
       "title": "GPUs",
       "name": "GPUs",
@@ -53,6 +54,15 @@
       "name": "RAM",
       "description": "Something you need",
       "thumbnail": "/src/assets/catergories/original/ram.png",
+      "intro": "Something you need",
+      "body": "\n\n\n",
+      "overwrite_style": false
+    },
+    {
+      "title": "All",
+      "name": "All",
+      "description": "Something you need",
+      "thumbnail": "/src/assets/catergories/original/cpu.png",
       "intro": "Something you need",
       "body": "\n\n\n",
       "overwrite_style": false

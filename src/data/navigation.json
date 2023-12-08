@@ -1,0 +1,31 @@
+{
+  "id": "navigation.mdx",
+  "slug": "navigation",
+  "body": "",
+  "collection": "config",
+  "data": {
+    "main_menu": [
+      { "href": "/blog", "label": "Blog" },
+      { "href": "/shop", "label": "Shop" },
+      { "href": "#contact", "label": "Contact" }
+    ],
+    "footer_menus": [
+      {
+        "label": "Info",
+        "links": [
+          { "href": "/", "label": "Home" },
+          { "href": "/about-nebulix", "label": "About us" },
+          { "href": "/menu/drinks", "label": "Restaurant Menu Demo" }
+        ]
+      },
+      {
+        "label": "Documentation",
+        "links": [
+          { "href": "/blog/tag/docs", "label": "Docs" },
+          { "href": "/blog", "label": "Blog" },
+          { "href": "/pricing", "label": "Pricing" }
+        ]
+      }
+    ]
+  }
+}

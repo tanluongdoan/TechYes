@@ -243,16 +243,7 @@
           "template": "grid",
           "animate": false,
           "container": "md",
-          "categories": [
-            "CPUs",
-            "GPUs",
-            "SSDs",
-            "MOBOs",
-            "RAM",
-            "Merch",
-            "Donations",
-            "Licenses"
-          ],
+          "categories": ["CPUs", "GPUs", "SSDs", "MOBOs", "RAM", "All"],
           "component": "ShopCategories",
           "title": "Categories"
         },
