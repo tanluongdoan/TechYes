@@ -46,7 +46,7 @@ export async function getStaticPaths() {
 type Props = CollectionEntry<"project">;
 const base_url = import.meta.env.PORTFOLIO_SLUG;
 const post = Astro.props;
-const { Content } = await post.render();
+// const { Content } = await post.render();
 
 let searchFilters = [`${t("content")}:${base_url}`];
 if (post?.data?.tag) {
@@ -66,9 +66,6 @@ const filter = post.data?.tag
   post.data.style.template === "full" && (
     <PageLayoutWide {...post.data} {base_url}>
       <Breadcrumb title={post.data.title} filter={filter} />
-      <div class="richtext">
-        <Content />
-      </div>
       {post.data.features && (
         <div class="pt-auto flex h-full max-w-md content-end border border-primary py-8 ">
           <div class="sticky bottom-8 self-end">
