@@ -97,9 +97,6 @@ const filter = post.data?.tag
     <PageLayoutSplit {...post.data} {base_url}>
       <Breadcrumb title={post.data.title} filter={filter} />
 
-      <div class="richtext">
-        <Content />
-      </div>
       {post.data.features && (
         <div class="pt-auto flex h-full max-w-md content-end py-8 ">
           <div class="sticky bottom-8 self-end">
