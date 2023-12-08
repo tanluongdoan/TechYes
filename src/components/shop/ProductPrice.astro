@@ -7,12 +7,12 @@ const { price, offer_price, in_stock, priceDisplay } = Astro.props;
 <div class={`${!in_stock ? "opacity-90" : ""}`}>
   {!in_stock && <span class=" text-xs font-normal ">{t("out_of_stock")}</span>}
   <div class="grid gap-0 text-xl font-bold leading-none">
-    <span
+    <!-- <span
       class={offer_price > 0 ? "muted text-xs text-danger line-through" : ""}
     >
-      R{priceDisplay}
-      <!-- {formatPrice(price)} -->
-    </span>
+      {formatPrice(price)}
+    </span> -->
     {offer_price > 0 && <span>{formatPrice(offer_price)}</span>}
+    {price > 0 && <span>R{priceDisplay}</span>}
   </div>
 </div>
