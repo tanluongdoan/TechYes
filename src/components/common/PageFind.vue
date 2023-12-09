@@ -39,8 +39,8 @@ const loaded = ref(false);
 
 const openSearchUi = async () => {
   if (!loaded.value) {
-    loadCSS();
-    LoadJS();
+    // loadCSS();
+    // LoadJS();
     show.value = true;
     loaded.value = true;
   } else {

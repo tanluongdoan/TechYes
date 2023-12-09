@@ -16,7 +16,7 @@ export async function getStaticPaths({ paginate }) {
 
   // console.log(dataFromSupabase);
 
-  let posts: any[] = [...dataFromSupabase, ...dataFromLocalJSON];
+  let posts: any[] = dataFromSupabase;
 
   posts
     // .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
