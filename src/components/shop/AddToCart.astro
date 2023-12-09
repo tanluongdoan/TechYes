@@ -21,6 +21,7 @@ const {
   min,
   max,
   in_stock,
+  priceDisplay,
 } = Astro.props;
 const bas_url = import.meta.env.SHOP_SLUG;
 const productPrice = offer_price > 0 ? offer_price : price;
@@ -114,12 +115,13 @@ if (variations && variations.length > 0) {
 }
 ---
 
-<div class="flex items-center gap-4">
+<div class="flex flex-wrap items-center justify-center gap-4">
   <div
     class="surface-base grid rounded-md px-2 py-1 text-lg font-bold leading-none shadow-md"
   >
     <span class={`${!in_stock ? "opacity-70" : ""}`}>
-      <ProductPrice price={price} offer={offer_price} client:idle />
+      <!-- <ProductPrice price={price} offer={offer_price} client:idle /> -->
+       R{priceDisplay}
       {
         !in_stock && (
           <span class=" text-xs font-normal ">{t("out_of_stock")}</span>
@@ -131,7 +133,7 @@ if (variations && variations.length > 0) {
     disabled={!in_stock}
     id="add-to-card"
     aria-label={t("add_to_cart")}
-    class="snipcart-add-item btn surface-primary btn-icon pointer-events-auto"
+    class="snipcart-add-item btn surface-primary btn pointer-events-auto"
     data-item-id={id}
     data-item-price={productPrice}
     data-item-url={`/${bas_url}/${slug}`}
@@ -141,5 +143,6 @@ if (variations && variations.length > 0) {
     {...customOption}
   >
     <Icon name="shop" class="h-6 w-6" />
+    <span>Add to cart</span>
   </button>
 </div>

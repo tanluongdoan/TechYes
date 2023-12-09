@@ -57,7 +57,9 @@ const productWrapClass = () => {
                   <ItemCard content={post} {base_url} {sizes} animate={true} />
                 )}
                 {style.card_template === "flex" && (
-                  <ItemCardFlex content={post} {base_url} animate={true} />
+                  <div class="card-wrapper">
+                    <ItemCardFlex content={post} {base_url} animate={true} />
+                  </div>
                 )}
               </Intersecting>
             </li>
@@ -93,4 +95,9 @@ const productWrapClass = () => {
 			@apply basis-[248px] flex justify-center;
 		}
 	}
+
+ /* .card-wrapper {
+    display: grid;
+    grid-template-rows: 1fr auto;
+  } */
 </style>
