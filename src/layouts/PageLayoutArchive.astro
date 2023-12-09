@@ -67,21 +67,16 @@ const productWrapClass = () => {
               </li>
             ))}
           </ul>
+          {page.lastPage > 1 && (
+            <div class="container-md pb-4" slot="default-pagination">
+              <Pager
+                totalPage={page.lastPage}
+                currentPage={page.currentPage}
+                url={pagerSlug}
+              />
+            </div>
+          )}
         </ProductListing>
-        <div class={`${productWrapClass()}`}>
-          <aside class="sidebar">test</aside>
-        </div>
-
-        {style.card_template}
-        {page.lastPage > 1 && (
-          <div class="container-md pb-4">
-            <Pager
-              totalPage={page.lastPage}
-              currentPage={page.currentPage}
-              url={pagerSlug}
-            />
-          </div>
-        )}
       </section>
     </PageLayoutWide>
   )
@@ -106,16 +101,4 @@ const productWrapClass = () => {
 	}
 
 
-</style>
-
-<style>
-  .card-wrapper,
-  .sidebar {
-    @apply max-w-[248px];
-  }
-
-  .products-container,
-  .sidebar {
-    flex: 1;
-  }
 </style>

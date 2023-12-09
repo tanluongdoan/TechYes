@@ -1,9 +1,8 @@
 <template>
   <div :class="productWrapClass">
     <aside class="sidebar">test</aside>
-    <ul :class="`${productWrapClass} products-container pb-20`">
-      <slot name="default-products"></slot>
-    </ul>
+    <slot name="default-products"></slot>
+    <slot name="default-pagination"></slot>
   </div>
 </template>
 <script setup>
@@ -12,3 +11,14 @@ const props = defineProps({
   noSsr: Boolean,
 });
 </script>
+<style>
+.card-wrapper,
+.sidebar {
+  max-width: 248px;
+}
+
+.products-container,
+.sidebar {
+  flex: 1;
+}
+</style>

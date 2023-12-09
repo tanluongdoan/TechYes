@@ -47,8 +47,8 @@ export function getPagination(
     );
 
     if (filterPosts.length === 0) return false;
-    // const totalPages = Math.ceil(filterPosts.length / data.per_page);
-    const totalPages = Math.ceil(filterPosts.length / filterPosts.length);
+    const totalPages = Math.ceil(filterPosts.length / data.per_page);
+    // const totalPages = Math.ceil(filterPosts.length / filterPosts.length);
 
     if (totalPages > 1) {
       let params: { params: { slug: string }; props: any }[] = [];
