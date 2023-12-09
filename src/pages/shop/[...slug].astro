@@ -52,7 +52,7 @@ export async function getStaticPaths() {
   });
 }
 
-type Props = CollectionEntry<"product">;
+type Props = any;
 const base_url = import.meta.env.SHOP_SLUG;
 const post = Astro.props;
 // const { Content } = await post.render();
@@ -84,6 +84,7 @@ const product = {
   category: post.data.category,
   guid: post.data.guid,
   slug: post.slug,
+  priceDisplay: post.data.priceDisplay,
 };
 let variation_images;
 const variations = post.data.variations
