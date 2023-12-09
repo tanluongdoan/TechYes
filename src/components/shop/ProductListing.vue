@@ -1,10 +1,12 @@
 <template>
-  <div :class="productWrapClass">
+  <div :class="productWrapClass" class="pb-32">
     <aside class="sidebar">this is a test</aside>
-    <ul :class="`${productWrapClass} products-container pb-20`">
-      <slot name="default-product-listing"></slot>
-    </ul>
-    <slot name="default-pagination"></slot>
+    <div class="products-container">
+      <ul :class="`${productWrapClass} pb-20`">
+        <slot name="default-product-listing"></slot>
+      </ul>
+      <slot name="default-pagination"></slot>
+    </div>
   </div>
 </template>
 <script setup>
