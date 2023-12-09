@@ -1,7 +1,9 @@
 <template>
   <div :class="productWrapClass">
-    <aside class="sidebar">test</aside>
-    <slot name="default-products"></slot>
+    <aside class="sidebar">this is a test</aside>
+    <ul :class="`${productWrapClass} products-container pb-20`">
+      <slot name="default-product-listing"></slot>
+    </ul>
     <slot name="default-pagination"></slot>
   </div>
 </template>

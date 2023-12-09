@@ -57,12 +57,7 @@ const animation = `hero_${animate ? content.slug : Math.random()}`;
     }
     <!-- {
       content.data.price && (
-        <ProductPrice
-          priceDisplay={content.data.priceDisplay}
-          price={content.data.price}
-          offer_price={content.data.offer_price}
-          in_stock={content.data.in_stock}
-        />
+        
       )
     } -->
 
@@ -73,7 +68,15 @@ const animation = `hero_${animate ? content.slug : Math.random()}`;
     }
   </div>
 </a>
-<AddToCart {...content.data} />
+
+<AddToCart priceShadow={false} {...content.data}>
+  <ProductPrice
+    priceDisplay={content.data.priceDisplay}
+    price={content.data.price}
+    offer_price={content.data.offer_price}
+    in_stock={content.data.in_stock}
+  />
+</AddToCart>
 <style lang="postcss">
 	.flex-card {
 			min-width: min(100vw - var(--spacing), 14rem);

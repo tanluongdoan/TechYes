@@ -43,30 +43,21 @@ const productWrapClass = () => {
     >
       <section data-pagefind-ignore="all">
         <ProductListing productWrapClass={productWrapClass()} noSsr={false}>
-          <ul
-            class={`${productWrapClass()}  products-container pb-20`}
-            slot="default-products"
-          >
-            {page.data.map((post) => (
-              <li class="custom-grid-item">
-                <Intersecting client:visible>
-                  {style.card_template === "grid" && (
-                    <ItemCard
-                      content={post}
-                      {base_url}
-                      {sizes}
-                      animate={true}
-                    />
-                  )}
-                  {style.card_template === "flex" && (
-                    <div class="card-wrapper">
-                      <ItemCardFlex content={post} {base_url} animate={true} />
-                    </div>
-                  )}
-                </Intersecting>
-              </li>
-            ))}
-          </ul>
+          {page.data.map((post) => (
+            <li class="custom-grid-item" slot="default-product-listing">
+              <Intersecting client:visible>
+                {style.card_template === "grid" && (
+                  <ItemCard content={post} {base_url} {sizes} animate={true} />
+                )}
+                {style.card_template === "flex" && (
+                  <div class="card-wrapper">
+                    <ItemCardFlex content={post} {base_url} animate={true} />
+                  </div>
+                )}
+              </Intersecting>
+            </li>
+          ))}
+
           {page.lastPage > 1 && (
             <div class="container-md pb-4" slot="default-pagination">
               <Pager
