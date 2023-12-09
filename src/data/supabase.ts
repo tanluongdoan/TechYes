@@ -46,7 +46,7 @@ export const getProducts = async () => {
             in_stock: true,
             is_digital: false,
             shipping: { weight: 649 },
-            category: [ProductCategory, "All"],
+            category: ["All", ProductCategory],
             date: "2023-08-28T20:42:48.308Z",
             style: { container: "md" },
           },

@@ -9,6 +9,8 @@ import ItemCard from "@components/cards/ItemCard.astro";
 import ItemCardFlex from "@components/cards/ItemCardFlex.astro";
 import ItemCardSmall from "@components/cards/ItemCardSmall.astro";
 import { slugify } from "@util/helpers";
+import ProductPrice from "@components/shop/ProductPrice.vue";
+import ProductListing from "@components/shop/ProductListing.vue";
 
 const { data, page, filters, base_url, filter, filter_type, tag } = Astro.props;
 const style = data?.style ? data.style : page.data.style;
@@ -20,10 +22,10 @@ const productWrapClass = () => {
   if (style.card_template === "grid")
     return `grid auto-grid-${data.style.container} gap-4 pb-32`;
   if (style.hero_template === "image")
-    return `flex flex-wrap justify-center pt-14 pb-20 flex-grid gap-x-4 gap-y-8`;
-  // return `flex flex-wrap gap-x-4 gap-y-8 justify-center pb-32 flex-grid `;
-  return `flex flex-wrap gap-x-4 gap-y-8 justify-center pb-32 flex-grid `;
-  // return `grid gap-x-4 gap-y-8  pb-32 custom-grid`;
+    return `flex flex-wrap justify-center pt-14 pb-20 flex-grid gap-x-4 gap-y-12`;
+  // return `flex flex-wrap gap-x-4 gap-y-12 justify-center pb-32 flex-grid `;
+  return `flex flex-wrap gap-x-4 gap-y-12 justify-start flex-grid `;
+  // return `grid gap-x-4 gap-y-12  pb-32 custom-grid`;
 };
 ---
 
@@ -39,32 +41,37 @@ const productWrapClass = () => {
       {base_url}
       {tag}
     >
-      {data.body && data.body !== "" && (
-        <section class={` ${data.style.content_class || "pb-14"}`}>
-          <div
-            class={`richtext container-${data.style.container}`}
-            set:html={marked.parse(data.body)}
-          />
-        </section>
-      )}
-
       <section data-pagefind-ignore="all">
-        <ul class={`${productWrapClass()}`}>
-          {page.data.map((post) => (
-            <li class="custom-grid-item">
-              <Intersecting client:visible>
-                {style.card_template === "grid" && (
-                  <ItemCard content={post} {base_url} {sizes} animate={true} />
-                )}
-                {style.card_template === "flex" && (
-                  <div class="card-wrapper">
-                    <ItemCardFlex content={post} {base_url} animate={true} />
-                  </div>
-                )}
-              </Intersecting>
-            </li>
-          ))}
-        </ul>
+        <ProductListing productWrapClass={productWrapClass()} noSsr={false}>
+          <ul
+            class={`${productWrapClass()}  products-container pb-20`}
+            slot="default-products"
+          >
+            {page.data.map((post) => (
+              <li class="custom-grid-item">
+                <Intersecting client:visible>
+                  {style.card_template === "grid" && (
+                    <ItemCard
+                      content={post}
+                      {base_url}
+                      {sizes}
+                      animate={true}
+                    />
+                  )}
+                  {style.card_template === "flex" && (
+                    <div class="card-wrapper">
+                      <ItemCardFlex content={post} {base_url} animate={true} />
+                    </div>
+                  )}
+                </Intersecting>
+              </li>
+            ))}
+          </ul>
+        </ProductListing>
+        <div class={`${productWrapClass()}`}>
+          <aside class="sidebar">test</aside>
+        </div>
+
         {style.card_template}
         {page.lastPage > 1 && (
           <div class="container-md pb-4">
@@ -81,6 +88,8 @@ const productWrapClass = () => {
 }
 
 <style lang="postcss">
+
+  
 	ul.bloglist {
 		width: calc(100% + var(--container-spacing));
 		margin-left: calc(var(--spacing) * -1);
@@ -92,12 +101,21 @@ const productWrapClass = () => {
 	.flex-grid {
 		li {
 			/* @apply flex-1 flex justify-center; */
-			@apply basis-[248px] flex justify-center;
+			@apply flex justify-center;
 		}
 	}
 
- /* .card-wrapper {
-    display: grid;
-    grid-template-rows: 1fr auto;
-  } */
+
+</style>
+
+<style>
+  .card-wrapper,
+  .sidebar {
+    @apply max-w-[248px];
+  }
+
+  .products-container,
+  .sidebar {
+    flex: 1;
+  }
 </style>

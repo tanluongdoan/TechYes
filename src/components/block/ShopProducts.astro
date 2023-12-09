@@ -92,7 +92,7 @@ const sizes = getGridImageSizes(container);
           </h2>
           {content && <div class="richtext" set:html={marked.parse(content)} />}
           <ul
-            class={`flex-grid flex flex-wrap justify-center gap-x-4 gap-y-8 `}
+            class={`flex-grid flex flex-wrap justify-center gap-x-4 gap-y-12 `}
             data-pagefind-ignore="all"
           >
             {posts.map((post, index) => (

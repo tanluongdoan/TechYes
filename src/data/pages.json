@@ -243,7 +243,7 @@
           "template": "grid",
           "animate": false,
           "container": "md",
-          "categories": ["CPUs", "GPUs", "SSDs", "MOBOs", "RAM", "All"],
+          "categories": ["All", "CPUs", "GPUs", "SSDs", "MOBOs", "RAM"],
           "component": "ShopCategories",
           "title": "Categories"
         },
