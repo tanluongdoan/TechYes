@@ -42,7 +42,11 @@ const productWrapClass = () => {
       {tag}
     >
       <section data-pagefind-ignore="all">
-        <ProductListing productWrapClass={productWrapClass()} noSsr={false}>
+        <ProductListing
+          productWrapClass={productWrapClass()}
+          noSsr={false}
+          client:load
+        >
           {page.data.map((post) => (
             <li class="custom-grid-item" slot="default-product-listing">
               <Intersecting client:visible>
