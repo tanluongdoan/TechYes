@@ -23,6 +23,7 @@ const m2dxOptions = {
 // https://astro.build/config
 export default defineConfig({
   site: "https://nebulix.unfolding.io",
+  test: "test",
   integrations: [
     mdx({}),
     sitemap(),

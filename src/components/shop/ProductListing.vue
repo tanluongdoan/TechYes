@@ -1,12 +1,18 @@
 <template>
   <div :class="productWrapClass" class="pb-32">
     <aside class="sidebar">
-      <button @click="handleClick">Load Data</button>
+      <ul>
+        <li><button @click="handleClick">Load Data</button></li>
+        <li><button @click="handleClear">clear Data</button></li>
+      </ul>
       <!-- <MultiRangeSlider />s -->
     </aside>
     <div class="products-container">
       <ul :class="`${productWrapClass} pb-20`">
-        <li v-for="item in productListing" :key="item">{{ item }}</li>
+        <li v-for="item in productListing" :key="item">
+          <!-- {{ item }} -->
+          <ProductCard />
+        </li>
         <slot name="default-product-listing" v-if="!productListing"></slot>
       </ul>
       <slot name="default-pagination" v-if="!productListing"></slot>
@@ -14,12 +20,21 @@
   </div>
 </template>
 <script setup>
+import { getProducts } from "@src/data/supabase";
+import ProductCard from "@components/shop/ProductCard.vue";
+
 import { ref } from "vue";
+
+console.log("import", import.meta.env);
 
 const productListing = ref(null);
 
-const handleClick = () => {
-  productListing.value = [1, 2, 3, 5];
+const handleClick = async () => {
+  productListing.value = await getProducts({});
+};
+
+const handleClear = () => {
+  productListing.value = null;
 };
 
 const props = defineProps({
