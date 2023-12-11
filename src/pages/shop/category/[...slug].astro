@@ -1,46 +1,17 @@
 ---
 /* SHOP ARCHIVE PAGES BY CATEGORY */
-import { getEntry } from "astro:content";
-import { getCollection } from "astro:content";
 import PageLayoutArchive from "@layouts/PageLayoutArchive.astro";
 import { getPagination, getCategoryData, slugify } from "@util/helpers";
-import dataFromLocalJSON from "@data/products.json";
 import dataFromShopJSON from "@data/shopConfig.json";
-import supabase, { getProducts } from "@data/supabase";
+import { getProducts } from "@data/supabase";
 
 export async function getStaticPaths({ paginate }) {
-  // let posts = await getCollection("product");
-  // console.log(JSON.stringify(posts));
-
   const dataFromSupabase = await getProducts();
-
-  console.log(
-    new Set(
-      dataFromSupabase.map((item) => {
-        return item.data.Brand;
-      }),
-    ),
-  );
-
-  const brands = [
-    ...new Set(
-      dataFromSupabase.map((item) => {
-        return item.data.Brand;
-      }),
-    ),
-  ];
-
-  console.log(brands);
-
-  // console.log(dataFromSupabase);
 
   let posts: any[] = dataFromSupabase;
 
-  posts
-    // .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
-    .filter((post) => !!post.data?.category);
+  posts.filter((post) => !!post.data?.category);
 
-  // const { data } = await getEntry("config", "shop");
   const allFilters = posts
     .map((post) => post.data.category)
     .filter((post) => !!post);
@@ -50,13 +21,23 @@ export async function getStaticPaths({ paginate }) {
   return getPagination(posts, filters, dataFromShopJSON, "category");
 }
 const base_url = import.meta.env.SHOP_SLUG;
-const { lastPage, currentPage, page, filter, filters, filter_type } =
-  Astro.props;
+const {
+  lastPage,
+  currentPage,
+  page,
+  filter,
+  filters,
+  filter_type,
+  productFilters,
+  ...rest
+} = Astro.props;
 // let { data } = await getEntry("config", "shop");
 
 /* GET HERO INFO FROM CONFIG */
 // delete data.hero_buttons;
 const pageData = getCategoryData(dataFromShopJSON.product_categories, filter);
+
+// console.log("pageData", productFilters);
 
 if (pageData && !pageData.overwrite_style) delete pageData.style;
 let data = {
@@ -71,6 +52,7 @@ let data = {
     lastPage: lastPage,
     currentPage: currentPage,
   }}
+  {productFilters}
   {filters}
   {filter}
   {filter_type}

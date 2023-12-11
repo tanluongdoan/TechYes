@@ -1,6 +1,8 @@
 <template>
   <div :class="productWrapClass" class="pb-32">
     <aside class="sidebar">
+      {{ JSON.stringify(props.productFilters) }}
+
       <ul>
         <li><button @click="handleClick">Load Data</button></li>
         <li><button @click="handleClear">clear Data</button></li>
@@ -40,6 +42,7 @@ const handleClear = () => {
 const props = defineProps({
   productWrapClass: String,
   noSsr: Boolean,
+  productFilters: Object,
 });
 </script>
 <style>

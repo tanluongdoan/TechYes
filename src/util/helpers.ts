@@ -34,6 +34,27 @@ export function getArchiveNav(
   };
 }
 
+const populateFilters = (collection: any[] | undefined, newItem: any) => {
+  if (!collection) {
+    return [newItem];
+  }
+
+  if (collection.includes(newItem)) {
+    return collection;
+  } else {
+    return [...collection, newItem];
+  }
+};
+
+interface ProductFilters {
+  Brand?: string[];
+  Size?: string[];
+  FormFactor?: string[];
+  Interface?: string[];
+  Supplier?: string[];
+  HasHeatsink?: number[];
+}
+
 export function getPagination(
   posts: any[],
   filters: string[] | any,
@@ -47,6 +68,49 @@ export function getPagination(
     );
 
     if (filterPosts.length === 0) return false;
+
+    const productFilters = filterPosts.reduce(
+      (productFilters: ProductFilters, { data }) => {
+        // if (
+        //   filterSlug !== "ssds" &&
+        //   filterSlug !== "ram" &&
+        //   filterSlug !== "mobos" &&
+        //   filterSlug !== "gpus"
+        // ) {
+        //   console.log("rest", data);
+        // }
+
+        const newObect: ProductFilters = {};
+
+        [
+          "Brand",
+          "Interface",
+          "Supplier",
+          "HasHeatsink",
+          "Size",
+          "FormFactor",
+          "Generation",
+          "HasRGB",
+          "Speed",
+          "CPUCores",
+          "CPUType",
+          "CPURange",
+          "HasWiFi",
+          "SocketType",
+          "GPUType",
+          "GPUSize",
+        ].forEach((item) => {
+          if (data[item] !== undefined) {
+            newObect[item] = populateFilters(productFilters[item], data[item]);
+          }
+        });
+
+        return newObect;
+      },
+      {},
+    );
+
+    // console.log(filterSlug, filterPosts.length, productFilters);
     const totalPages = Math.ceil(filterPosts.length / data.per_page);
     // const totalPages = Math.ceil(filterPosts.length / filterPosts.length);
 
@@ -55,6 +119,7 @@ export function getPagination(
 
       for (let i = 1; i <= totalPages; i++) {
         const sufix = i > 1 ? `/${i}` : "";
+
         params = [
           ...params,
           {
@@ -67,6 +132,7 @@ export function getPagination(
               filter_type: type,
               filters: filters,
               filter: filter,
+              productFilters,
               page: filterPosts.slice(
                 i * data.per_page - data.per_page,
                 i * data.per_page,
@@ -91,6 +157,7 @@ export function getPagination(
           filters: filters,
           filter: filter,
           page: filterPosts,
+          productFilters,
         },
       },
     ];

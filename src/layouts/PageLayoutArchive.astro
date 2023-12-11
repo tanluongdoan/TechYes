@@ -12,7 +12,16 @@ import { slugify } from "@util/helpers";
 import ProductPrice from "@components/shop/ProductPrice.vue";
 import ProductListing from "@components/shop/ProductListing.vue";
 
-const { data, page, filters, base_url, filter, filter_type, tag } = Astro.props;
+const {
+  data,
+  page,
+  filters,
+  base_url,
+  filter,
+  filter_type,
+  tag,
+  productFilters,
+} = Astro.props;
 const style = data?.style ? data.style : page.data.style;
 const sizes = getGridImageSizes(data?.style?.container || "md");
 const template = style?.template ? data.style.template : "split";
@@ -29,8 +38,7 @@ const productWrapClass = () => {
 };
 ---
 
-<!-- {template} -->{page.data.count}
-{
+<!-- {template} --><!-- {page.data.count} -->{
   template === "full" && (
     <PageLayoutWide
       {...page}
@@ -43,6 +51,7 @@ const productWrapClass = () => {
     >
       <section data-pagefind-ignore="all">
         <ProductListing
+          productFilters={productFilters}
           productWrapClass={productWrapClass()}
           noSsr={false}
           client:load
