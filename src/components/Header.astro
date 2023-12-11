@@ -26,7 +26,7 @@ const isActive = (href) => {
       aria-label={title}
       class="grid place-items-center py-3 text-primary"
     >
-      <Icon name="logo" class="h-12" />
+      <Icon name="logo" class="w-full max-w-[200px]" />
     </a>
     {
       menu && (
@@ -49,7 +49,7 @@ const isActive = (href) => {
     {
       (
         <ul class="nav-underline relative -mr-4  ml-auto flex flex-nowrap justify-end pl-4 uppercase md:mr-0">
-          <li>
+          <li class="hidden md:list-item">
             <CartButton
               label={t("cart")}
               client:idle
@@ -59,18 +59,18 @@ const isActive = (href) => {
               <Icon name="shopping-cart" class="h-6 w-6" />
             </CartButton>
           </li>
-          <li>
+          <li class="hidden md:list-item">
             <PageFind />
           </li>
 
-          <li>
+          <li class="hidden md:list-item">
             <ColorSwitch client:idle />
           </li>
 
-          <li>
+          <li class="hidden md:list-item">
             <MyAccountButton />
           </li>
-          <li class="md:hidden">
+          <li class="flex md:hidden">
             <NavMobile
               client:idle
               translations={{ menu: t("menu"), close: t("close") }}

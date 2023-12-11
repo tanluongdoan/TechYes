@@ -2,7 +2,7 @@
   <button
     :aria-label="show ? translations.close : translations.menu"
     @click="toggleMenu()"
-    :class="` nav-mobile-btn relative  ml-auto flex  text-primary md:hidden ${
+    :class="` nav-mobile-btn relative  m-auto flex  text-primary md:hidden ${
       show ? 'bg-transparent ' : ''
     }`"
   >
