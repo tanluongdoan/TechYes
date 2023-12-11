@@ -162,7 +162,7 @@
     "hero_surface": "primary",
     "hero_image_opacity": "",
     "container": "lg",
-    "page_class": "text-center",
+    "page_class": "",
     "content_class": ""
   }
 }

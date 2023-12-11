@@ -1,7 +1,20 @@
 <template>
   <div :class="productWrapClass" class="pb-32">
     <aside class="sidebar">
-      {{ JSON.stringify(props.productFilters) }}
+      <!-- {{ JSON.stringify(props.productFilters) }} -->
+
+      <div v-for="(value, key) in props.productFilters" :key="key">
+        <p>{{ key }}</p>
+
+        <ul>
+          <li v-for="item in value" :key="item">
+            <input type="checkbox" :name="Key" :id="'option-' + item" /><label
+              :for="'option-' + item"
+              >{{ item }}</label
+            >
+          </li>
+        </ul>
+      </div>
 
       <ul>
         <li><button @click="handleClick">Load Data</button></li>
