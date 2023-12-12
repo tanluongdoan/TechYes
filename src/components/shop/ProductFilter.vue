@@ -1,10 +1,10 @@
 <template>
-  <div class="border-top-2 mb-3 border-gray-500 bg-white p-1">
+  <div class="border-top-2 mb-3 bg-white p-2 shadow-md dark:bg-slate-900">
     <div>
       <button
         @click="toggleMenu"
         type="button"
-        class="border-bottom flex w-full items-center justify-between border-b-0 py-2 text-left font-medium"
+        class="border-bottom flex w-full items-center justify-between border-b-0 p-2 text-left font-medium"
         data-accordion-target="#accordion-collapse-body-1"
         aria-expanded="true"
         aria-controls="accordion-collapse-body-1"
@@ -39,17 +39,17 @@
       :class="isHidden ? 'hidden' : ''"
       aria-labelledby="accordion-collapse-heading-1"
     >
-      <div class="flex flex-wrap gap-2 px-1">
-        <label
+      <div class="gap-2 p-2">
+        <div
           class="flex cursor-pointer items-center space-x-2"
           v-for="item in valueState"
           :key="item"
         >
-          <input type="checkbox" :name="Key" :id="'option-' + item" />
-          <div :for="'option-' + item">
+          <input type="checkbox" :name="name" :id="'option-' + item" />
+          <label :for="'option-' + item">
             {{ formatName[item] ? formatName[item] : item }}
-          </div>
-        </label>
+          </label>
+        </div>
       </div>
     </div>
   </div>
