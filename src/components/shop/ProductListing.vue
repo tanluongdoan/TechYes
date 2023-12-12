@@ -4,16 +4,7 @@
       <!-- {{ JSON.stringify(props.productFilters) }} -->
 
       <div v-for="(value, key) in props.productFilters" :key="key">
-        <p>{{ key }}</p>
-
-        <ul>
-          <li v-for="item in value" :key="item">
-            <input type="checkbox" :name="Key" :id="'option-' + item" /><label
-              :for="'option-' + item"
-              >{{ item }}</label
-            >
-          </li>
-        </ul>
+        <ProductFilter :value="value" :name="key" />
       </div>
 
       <ul>
@@ -39,6 +30,7 @@ import { getProducts } from "@src/data/supabase";
 import ProductCard from "@components/shop/ProductCard.vue";
 
 import { ref } from "vue";
+import ProductFilter from "./ProductFilter.vue";
 
 console.log("import", import.meta.env);
 
