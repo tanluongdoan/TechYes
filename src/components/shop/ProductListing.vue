@@ -1,8 +1,9 @@
 <template>
   <div :class="productWrapClass" class="pb-32">
     <aside class="sidebar">
-      <!-- {{ JSON.stringify(props.productFilters) }} -->
-
+      <div>
+        <PriceFilter />
+      </div>
       <div v-for="(value, key) in props.productFilters" :key="key">
         <ProductFilter :value="value" :name="key" />
       </div>
@@ -27,10 +28,11 @@
 </template>
 <script setup>
 import { getProducts } from "@src/data/supabase";
-import ProductCard from "@components/shop/ProductCard.vue";
-
 import { ref } from "vue";
-import ProductFilter from "./ProductFilter.vue";
+
+import ProductCard from "@components/shop/ProductCard.vue";
+import ProductFilter from "@components/shop/ProductFilter.vue";
+import PriceFilter from "@components/shop/PriceFilter.vue";
 
 console.log("import", import.meta.env);
 

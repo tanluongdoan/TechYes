@@ -1,63 +1,32 @@
 <template>
-  <div class="border-top-2 mb-3 bg-white p-2 shadow-md dark:bg-slate-900">
-    <div>
-      <button
-        @click="toggleMenu"
-        type="button"
-        class="border-bottom flex w-full items-center justify-between border-b-0 p-2 text-left font-medium"
-        data-accordion-target="#accordion-collapse-body-1"
-        aria-expanded="true"
-        aria-controls="accordion-collapse-body-1"
-      >
-        <span>{{ formatName[name] ? formatName[name] : name }}</span>
-
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke-width="1.5"
-          stroke="currentColor"
-          class="h-4 w-4"
-        >
-          <path
-            v-if="isHidden"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M12 4.5v15m7.5-7.5h-15"
-          />
-          <path
-            v-else
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M19.5 12h-15"
-          />
-        </svg>
-      </button>
-    </div>
+  <FilterAccordion>
+    <template v-slot:accordion-trigger>{{
+      formatName[name] ? formatName[name] : name
+    }}</template>
     <div
-      class="mb-4"
-      :class="isHidden ? 'hidden' : ''"
-      aria-labelledby="accordion-collapse-heading-1"
+      class="flex cursor-pointer items-center space-x-2"
+      v-for="item in valueState"
+      :key="item"
     >
-      <div class="gap-2 p-2">
-        <div
-          class="flex cursor-pointer items-center space-x-2"
-          v-for="item in valueState"
-          :key="item"
-        >
-          <input type="checkbox" :name="name" :id="'option-' + item" />
-          <label :for="'option-' + item">
-            {{ formatName[item] ? formatName[item] : item }}
-          </label>
-        </div>
-      </div>
+      <input
+        type="checkbox"
+        :name="name"
+        :id="'option-' + item"
+        :aria-label="name"
+      />
+      <label :for="'option-' + item">
+        {{ formatName[item] ? formatName[item] : item }}
+      </label>
     </div>
-  </div>
+  </FilterAccordion>
 </template>
 <script setup>
+import FilterAccordion from "@components/shop/FilterAccordion.vue";
+
 import { onMounted, ref } from "vue";
-const isHidden = ref(true);
+
 const valueState = ref();
+
 onMounted(async () => {
   if (name === "Size") {
     valueState.value = convertAndSortRAMSizes(value);
@@ -66,9 +35,6 @@ onMounted(async () => {
   }
 });
 
-const toggleMenu = () => {
-  isHidden.value = !isHidden.value;
-};
 const props = defineProps({
   value: Object,
   name: String,
@@ -108,5 +74,4 @@ function convertAndSortRAMSizes(sizes) {
 
   return formattedSizes;
 }
-// console.log(convertAndSortRAMSizes(sizes));
 </script>
