@@ -28,3 +28,13 @@ onMounted(() => {
   });
 });
 </script>
+
+<style>
+.noUi-horizontal .noUi-handle {
+  width: 28px;
+  height: 28px;
+  right: -17px;
+  top: -6px;
+  border-radius: 50%;
+}
+</style>

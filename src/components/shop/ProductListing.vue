@@ -14,8 +14,11 @@
 
       <!-- <MultiRangeSlider />s -->
     </aside>
+
     <div class="products-container">
-      <!-- {{ JSON.stringify(productCustomFilters) }} -->
+      <!-- <p class="mb-3">
+        {{ JSON.stringify(computedValue) }}
+      </p> -->
       <ul :class="`${productWrapClass} pb-20`">
         <li v-for="item in productListing" :key="item">
           <!-- {{ item }} -->
@@ -63,12 +66,12 @@ const props = defineProps({
 });
 
 // a computed ref
-// const computedValue = computed(async () => {
-//   setTimeout(() => {
-//     return "good";
-//   }, 3000);
-//   return "item";
-// });
+const computedValue = computed(async () => {
+  setTimeout(() => {
+    return "good";
+  }, 3000);
+  return "item";
+});
 </script>
 <style>
 .card-wrapper,
