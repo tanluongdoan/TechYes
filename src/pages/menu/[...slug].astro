@@ -51,6 +51,7 @@ const base_url = import.meta.env.MENU_SLUG;
 const post = Astro.props;
 const { Content } = await post.render();
 const { data } = Astro.props;
+export const prerender = true;
 ---
 
 <PageLayoutWide {...post.data}>

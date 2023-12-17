@@ -34,7 +34,7 @@ import ProductCard from "@components/shop/ProductCard.vue";
 import ProductFilter from "@components/shop/ProductFilter.vue";
 import PriceFilter from "@components/shop/PriceFilter.vue";
 
-console.log("import", import.meta.env);
+// console.log("import", import.meta.env);
 
 const productListing = ref(null);
 

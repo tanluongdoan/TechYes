@@ -24,7 +24,7 @@ function onIntersectionObserver([{ isIntersecting }]) {
 
 const props = defineProps({
   className: String,
-  noSsr: Boolean,
+  noSsr: Boolean | undefined,
 });
 const show = computed(() => {
   if (!!props?.noSsr && !firstVisible.value) return false;

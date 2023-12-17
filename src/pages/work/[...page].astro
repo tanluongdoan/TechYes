@@ -20,6 +20,7 @@ const tag = [...new Set(allTags.flat(1))];
 const base_url = import.meta.env.PORTFOLIO_SLUG;
 const { page } = Astro.props;
 const { data } = await getEntry("config", "project");
+export const prerender = true;
 ---
 
 <PageLayoutArchive {page} {tag} {data} {base_url} />

@@ -42,6 +42,7 @@ export async function getStaticPaths() {
 const { image } = Astro.props;
 const { slug } = Astro.params;
 const title = toHeaderCase(slug);
+export const prerender = true;
 ---
 
 <!doctype html>
