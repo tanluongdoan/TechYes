@@ -5,16 +5,17 @@
         <PriceFilter />
       </div>
       <div v-for="(value, key) in props.productFilters" :key="key">
-        <ProductFilter :value="value" :name="key" />
+        <ProductFilter
+          :model-value="productCustomFilters"
+          :value="value"
+          :name="key"
+        />
       </div>
 
-      <ul>
-        <li><button @click="handleClick">Load Data</button></li>
-        <li><button @click="handleClear">clear Data</button></li>
-      </ul>
       <!-- <MultiRangeSlider />s -->
     </aside>
     <div class="products-container">
+      <!-- {{ JSON.stringify(productCustomFilters) }} -->
       <ul :class="`${productWrapClass} pb-20`">
         <li v-for="item in productListing" :key="item">
           <!-- {{ item }} -->
@@ -27,8 +28,7 @@
   </div>
 </template>
 <script setup>
-import { getProducts } from "@src/data/supabase";
-import { ref } from "vue";
+import { computed, ref, defineProps } from "vue";
 
 import ProductCard from "@components/shop/ProductCard.vue";
 import ProductFilter from "@components/shop/ProductFilter.vue";
@@ -37,20 +37,38 @@ import PriceFilter from "@components/shop/PriceFilter.vue";
 // console.log("import", import.meta.env);
 
 const productListing = ref(null);
-
-const handleClick = async () => {
-  productListing.value = await getProducts({});
-};
-
-const handleClear = () => {
-  productListing.value = null;
-};
+const productCustomFilters = ref({
+  Brand: [],
+  Interface: [],
+  Supplier: [],
+  HasHeatsink: [],
+  Size: [],
+  FormFactor: [],
+  Generation: [],
+  HasRGB: [],
+  Speed: [],
+  CPUCores: [],
+  CPUType: [],
+  CPURange: [],
+  HasWiFi: [],
+  SocketType: [],
+  GPUType: [],
+  GPUSize: [],
+});
 
 const props = defineProps({
   productWrapClass: String,
   noSsr: Boolean,
   productFilters: Object,
 });
+
+// a computed ref
+// const computedValue = computed(async () => {
+//   setTimeout(() => {
+//     return "good";
+//   }, 3000);
+//   return "item";
+// });
 </script>
 <style>
 .card-wrapper,

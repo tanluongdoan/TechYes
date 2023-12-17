@@ -28,11 +28,8 @@ export const getProducts = async (filters?: any) => {
   }
 
   const results = (await Promise.allSettled(promises)).flatMap((item) => {
-    if (filters) {
-      console.log("item", item);
-    }
     if (item.status === "fulfilled" && item.value.data?.length) {
-      return item.value.data.map((product) => {
+      return item.value.data.map((product: any) => {
         const {
           ProductCode,
           ProductTitle,

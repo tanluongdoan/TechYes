@@ -15,6 +15,9 @@ const snipcartKey = import.meta.env.SNIPCART_KEY;
 export async function getStaticPaths() {
   /* This is a bit hacky, but I want to get routes for all images without using node:fs */
   const images = await Astro.glob("../../assets/*");
+
+  console.log("images", images);
+
   /* get all the images */
   let params = images
     .filter((img) => ["jpeg", "jpg", "png", "gif"].includes(img.default.format))
@@ -35,7 +38,7 @@ export async function getStaticPaths() {
         },
       };
     });
-  console.log(params);
+  // console.log(params);
   return params;
 }
 

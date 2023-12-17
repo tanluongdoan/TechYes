@@ -1,0 +1,38 @@
+---
+import { getProducts } from "@src/data/supabase";
+import { getPagination } from "@util/helpers";
+import dataFromShopJSON from "@data/shopConfig.json";
+import PageLayoutArchive from "@layouts/PageLayoutArchive.astro";
+
+console.log("params", Astro.params);
+console.log("props", Astro.props);
+
+const dataFromSupabase = await getProducts({});
+
+let posts: any[] = dataFromSupabase;
+
+const allFilters = posts
+  .map((post) => post.data.category)
+  .filter((post) => !!post);
+
+const filters = [...new Set(allFilters.flat(1))];
+
+const pageData = getPagination(posts, filters, dataFromShopJSON, "category");
+console.log("props", dataFromShopJSON);
+// console.log("props", Object.keys(pageData[0]["props"].currentPage));
+// console.log("props", Object.keys(pageData[1]["props"].currentPage));
+---
+
+<PageLayoutArchive
+  page={{
+    data: dataFromSupabase,
+  }}
+  data={dataFromShopJSON}
+/>
+<div>
+  <code>
+    <pre>
+        {JSON.stringify(dataFromShopJSON, undefined, 1)}
+    </pre>
+  </code>
+</div>

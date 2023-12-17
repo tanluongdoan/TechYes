@@ -71,15 +71,6 @@ export function getPagination(
 
     const productFilters = filterPosts.reduce(
       (productFilters: ProductFilters, { data }) => {
-        // if (
-        //   filterSlug !== "ssds" &&
-        //   filterSlug !== "ram" &&
-        //   filterSlug !== "mobos" &&
-        //   filterSlug !== "gpus"
-        // ) {
-        //   console.log("rest", data);
-        // }
-
         const newObect: ProductFilters = {};
 
         [
@@ -105,7 +96,7 @@ export function getPagination(
           }
         });
 
-        return newObect;
+        return newObect || "";
       },
       {},
     );

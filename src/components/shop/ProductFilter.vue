@@ -14,9 +14,12 @@
         :name="name"
         :id="'option-' + item"
         :aria-label="name"
+        :value="item || ''"
+        v-model="modelValue[name]"
       />
       <label :for="'option-' + item">
-        {{ formatName[item] ? formatName[item] : item }}
+        {{ item !== null && formatName[item] ? formatName[item] : item }}
+        {{ item === null ? "Unknown" : "" }}
       </label>
     </div>
   </FilterAccordion>
@@ -24,7 +27,7 @@
 <script setup>
 import FilterAccordion from "@components/shop/FilterAccordion.vue";
 
-import { onMounted, ref } from "vue";
+import { onMounted, defineProps, defineEmits, ref } from "vue";
 
 const valueState = ref();
 
@@ -39,6 +42,7 @@ onMounted(async () => {
 const props = defineProps({
   value: Object,
   name: String,
+  modelValue: Object,
 });
 const { value, name } = props;
 const formatName = {
@@ -50,6 +54,11 @@ const formatName = {
   SocketType: "Socket Type",
   CPURange: "CPU Range",
   CPUCores: "CPU Cores",
+  GPUType: "GPU Type",
+  CPUType: "CPU Type",
+  GPUSize: "GPU Size",
+  HasWiFi: "Has WiFi",
+  HasRGB: "Has RGB",
 };
 
 function convertAndSortRAMSizes(sizes) {
