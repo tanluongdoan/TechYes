@@ -16,9 +16,6 @@
     </aside>
 
     <div class="products-container">
-      <!-- <p class="mb-3">
-        {{ JSON.stringify(computedValue) }}
-      </p> -->
       <ul :class="`${productWrapClass} pb-20`">
         <li v-for="item in productListing" :key="item">
           <!-- {{ item }} -->
@@ -31,13 +28,19 @@
   </div>
 </template>
 <script setup>
-import { computed, ref, defineProps } from "vue";
+import { computed, ref, defineProps, watch } from "vue";
 
 import ProductCard from "@components/shop/ProductCard.vue";
 import ProductFilter from "@components/shop/ProductFilter.vue";
 import PriceFilter from "@components/shop/PriceFilter.vue";
 
 // console.log("import", import.meta.env);
+
+const props = defineProps({
+  productWrapClass: String,
+  noSsr: Boolean,
+  productFilters: Object,
+});
 
 const productListing = ref(null);
 const productCustomFilters = ref({
@@ -59,19 +62,14 @@ const productCustomFilters = ref({
   GPUSize: [],
 });
 
-const props = defineProps({
-  productWrapClass: String,
-  noSsr: Boolean,
-  productFilters: Object,
-});
-
 // a computed ref
-const computedValue = computed(async () => {
-  setTimeout(() => {
-    return "good";
-  }, 3000);
-  return "item";
-});
+watch(
+  productCustomFilters.value,
+  (newValue) => {
+    console.log(Array.from(newValue.Brand));
+  },
+  { deep: true },
+);
 </script>
 <style>
 .card-wrapper,

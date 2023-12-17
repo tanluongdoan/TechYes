@@ -50,7 +50,7 @@ const productWrapClass = () => {
           productFilters={productFilters}
           productWrapClass={productWrapClass()}
           noSsr={false}
-          client:load
+          client:only
         >
           {page.data.map((post) => (
             <li class="custom-grid-item" slot="default-product-listing">
