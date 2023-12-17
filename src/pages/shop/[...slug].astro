@@ -112,6 +112,8 @@ const filter = post.data?.category
       type: "category",
     }
   : null;
+
+export const prerender = true;
 ---
 
 <ProductLayoutSplit {...post.data} {base_url} {variation_images}>

@@ -22,6 +22,8 @@ const posts = (await getCollection("blog")).sort(
 /* get the used tags */
 const allFilters = posts.map((post) => post.data.tag).filter((post) => !!post);
 const filters = [...new Set(allFilters.flat(1))];
+
+export const prerender = true;
 ---
 
 <PageLayoutArchive {page} {filters} {data} {base_url} />
