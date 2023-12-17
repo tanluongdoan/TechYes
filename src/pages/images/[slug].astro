@@ -16,7 +16,7 @@ export async function getStaticPaths() {
   /* This is a bit hacky, but I want to get routes for all images without using node:fs */
   const images = await Astro.glob("../../assets/*");
 
-  console.log("images", images);
+  // console.log("images", images);
 
   /* get all the images */
   let params = images

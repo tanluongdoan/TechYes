@@ -10,39 +10,47 @@ import PageLayoutWide from "@layouts/PageLayoutWide.astro";
 import { t } from "@util/translate";
 
 export async function getStaticPaths() {
-  const posts = (await getCollection("blog")).sort(
-    (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
-  );
-  const count = posts.length;
-  return posts.map((post, index) => {
-    let next: CollectionEntry<"blog"> | null = null;
-    let prev: CollectionEntry<"blog"> | null = null;
-    const archiveNav = getArchiveNav(count, index, posts);
-    next = archiveNav.next;
-    prev = archiveNav.prev;
+  try {
+    const posts = (await getCollection("blog")).sort(
+      (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+    );
 
-    return {
-      params: { slug: post.slug },
-      props: {
-        ...post,
-        data: {
-          ...post.data,
-          nav: {
-            next: {
-              slug: next?.slug,
-              title: next?.data?.title,
+    console.log("post collection", posts);
+    const count = posts.length;
+    return posts.map((post, index) => {
+      let next: CollectionEntry<"blog"> | null = null;
+      let prev: CollectionEntry<"blog"> | null = null;
+      const archiveNav = getArchiveNav(count, index, posts);
+      next = archiveNav.next;
+      prev = archiveNav.prev;
+
+      return {
+        params: { slug: post.slug },
+        props: {
+          ...post,
+          data: {
+            ...post.data,
+            nav: {
+              next: {
+                slug: next?.slug,
+                title: next?.data?.title,
+              },
+              prev: {
+                slug: prev?.slug,
+                title: prev?.data?.title,
+              },
+              index: index,
             },
-            prev: {
-              slug: prev?.slug,
-              title: prev?.data?.title,
-            },
-            index: index,
           },
         },
-      },
-    };
-  });
+      };
+    });
+  } catch (error) {
+    console.log("blog error", error);
+  }
 }
+
+console.log("blog props", Astro.props);
 
 type Props = CollectionEntry<"blog">;
 const base_url = import.meta.env.BLOG_SLUG;
@@ -65,6 +73,7 @@ const filter = post.data?.tag
 export const prerender = true;
 ---
 
+<>Test</>
 {
   post.data.style.template === "full" && (
     <PageLayoutWide {...post.data} {base_url}>
