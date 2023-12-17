@@ -21,6 +21,8 @@ const pageData = getPagination(posts, filters, dataFromShopJSON, "category");
 console.log("props", dataFromShopJSON);
 // console.log("props", Object.keys(pageData[0]["props"].currentPage));
 // console.log("props", Object.keys(pageData[1]["props"].currentPage));
+
+export const prerender = false;
 ---
 
 <PageLayoutArchive

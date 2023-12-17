@@ -78,7 +78,7 @@ export default defineConfig({
     inlineStylesheets: "always",
   },
   scopedStyleStrategy: "attribute",
-  output: "server",
+  output: "hybrid",
   adapter: netlify({
     edgeMiddleware: true,
   }),
