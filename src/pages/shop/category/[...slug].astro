@@ -3,7 +3,7 @@
 import PageLayoutArchive from "@layouts/PageLayoutArchive.astro";
 import { getPagination, getCategoryData, slugify } from "@util/helpers";
 import dataFromShopJSON from "@data/shopConfig.json";
-import { getProducts } from "@data/supabase";
+import { getProducts } from "@src/data/supabase-old";
 
 export async function getStaticPaths({ paginate }) {
   const dataFromSupabase = await getProducts();
@@ -61,3 +61,4 @@ export const prerender = true;
   {data}
   {base_url}
 />
+ @src/data/supabase-old

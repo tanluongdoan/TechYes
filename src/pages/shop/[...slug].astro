@@ -10,7 +10,7 @@ import AddToCart from "@components/shop/AddToCart.astro";
 import ProductVariations from "@components/shop/ProductVariations.astro";
 import ShippingDimensions from "@components/shop/ShippingDimensions.astro";
 import { t } from "@util/translate";
-import { getProducts } from "@src/data/supabase";
+import { getProducts } from "@src/data/supabase-old";
 
 export async function getStaticPaths() {
   // const posts = (await getCollection("product")).sort(
@@ -174,3 +174,4 @@ export const prerender = true;
     @apply shadow-md;
   }
 </style> -->
+ @src/data/supabase-old
