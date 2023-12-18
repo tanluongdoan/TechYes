@@ -52,7 +52,7 @@ const productWrapClass = () => {
           noSsr={false}
           client:only
         >
-          {page.data.map((post) => (
+          {page.data.map((post: any) => (
             <li class="custom-grid-item" slot="default-product-listing">
               <Intersecting client:visible>
                 {style.card_template === "grid" && (

@@ -7,6 +7,25 @@ const supabaseKey =
   import.meta.env.SUPABASE_KEY || import.meta.env.PUBLIC_SUPABASE_KEY;
 const supabase = createClient(supabaseUrl, supabaseKey);
 
+export { supabase };
+
+const productCategories = [
+  "CPUProducts",
+  "GPUProducts",
+  "MOBOProducts",
+  "RAMProducts",
+  "SSDProducts",
+];
+
+export const getProductsByFilters = async (filters: string, page: number) =>
+  supabase
+    .from("CPUProducts")
+    .select("*")
+    .or(filters)
+    .range(page, page + 8);
+
+// console.log(resutls);
+
 export const getProducts = async (filters?: any) => {
   let promises: any[] = [];
   if (filters) {
@@ -18,13 +37,7 @@ export const getProducts = async (filters?: any) => {
         .range(0, 8);
     });
   } else {
-    promises = [
-      "CPUProducts",
-      "GPUProducts",
-      "MOBOProducts",
-      "RAMProducts",
-      "SSDProducts",
-    ].map((item) => supabase.from(item).select("*"));
+    promises = productCategories.map((item) => supabase.from(item).select("*"));
   }
 
   const results = (await Promise.allSettled(promises)).flatMap((item) => {
