@@ -76,6 +76,7 @@ const props = defineProps({
 });
 
 const productListing = ref(null);
+
 const productCustomFilters = ref({
   Brand: [],
   Interface: [],
@@ -115,7 +116,10 @@ watch(productCustomFilters.value, async (newValue) => {
     return;
   }
 
+  const filters = {};
   if (items.length > 0) {
+    console.log("filters", items);
+    // hàm đeer lọc sản phẩm
     const { data, error } = await getProductsByFilters(items.join(", "), 0);
     // console.log(data);
     productListing.value = data;
