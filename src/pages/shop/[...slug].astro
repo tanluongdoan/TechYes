@@ -10,7 +10,7 @@ import AddToCart from "@components/shop/AddToCart.astro";
 import ProductVariations from "@components/shop/ProductVariations.astro";
 import ShippingDimensions from "@components/shop/ShippingDimensions.astro";
 import { t } from "@util/translate";
-import { getProducts } from "@src/data/supabase-old";
+import { getProducts } from "@src/data/supabase";
 
 export async function getStaticPaths() {
   // const posts = (await getCollection("product")).sort(
@@ -167,11 +167,3 @@ export const prerender = true;
     {searchFilters.map((filter) => <meta data-pagefind-filter={filter} />)}
   </div>
 </ProductLayoutSplit>
-
-<!-- <style>
-  .price-tag,
-  #add-to-card {
-    @apply shadow-md;
-  }
-</style> -->
- @src/data/supabase-old

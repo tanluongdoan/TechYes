@@ -54,29 +54,98 @@
             </div>
           </div>
         </li>
+
         <slot name="default-product-listing" v-if="!productListing"></slot>
       </ul>
-      <slot name="default-pagination" v-if="!productListing"></slot>
+      <div
+        v-if="productListing"
+        class="flex items-center justify-end space-x-1 py-2 pt-12"
+      >
+        <!-- prev button (previous page) -->
+        <button
+          @click="gotoPage(currentPage - 1)"
+          :disabled="currentPage === 1"
+          class="flex h-8 w-8 items-center justify-center rounded hover:border-black hover:bg-primary hover:text-white disabled:pointer-events-none"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-3 w-3"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            />
+          </svg>
+        </button>
+
+        <!--  stepping through each page  -->
+        <div
+          v-for="page in sizePage"
+          :key="page"
+          class="flex items-center justify-between"
+        >
+          <button
+            @click="gotoPage(page)"
+            :disabled="page === currentPage"
+            class="block h-8 w-8 rounded border-none border-gray-100 text-center leading-8 hover:bg-primary hover:text-white disabled:bg-primary disabled:text-white"
+          >
+            {{ page }}
+          </button>
+        </div>
+
+        <!-- next button (next page) -->
+        <button
+          @click="gotoPage(currentPage + 1)"
+          :disabled="currentPage === sizePage"
+          class="flex h-8 w-8 items-center justify-center rounded hover:border-black hover:bg-primary hover:text-white disabled:pointer-events-none"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-3 w-3"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+              clip-rule="evenodd"
+            />
+          </svg>
+        </button>
+      </div>
+      <slot name="default-pagination" v-if="!productListing"> </slot>
     </div>
   </div>
 </template>
 <script setup>
 import { computed, ref, defineProps, watch } from "vue";
-
 import ProductFilter from "@components/shop/ProductFilter.vue";
 import PriceFilter from "@components/shop/PriceFilter.vue";
-import supabase, { getProductsByFilters } from "@src/data/supabase";
+import supabase, {
+  getProductsByFilters,
+  getProductsByFiltersSize,
+} from "@src/data/supabase";
 
+// pagination
+const currentPage = ref(1);
+const sizePage = ref();
+const gotoPage = async (page) => {
+  if (page >= 1 && page <= sizePage.value) {
+    currentPage.value = page;
+  }
+};
 // console.log("import", import.meta.env);
 
 const props = defineProps({
   productWrapClass: String,
   noSsr: Boolean,
   productFilters: Object,
+  slug: String,
 });
-
 const productListing = ref(null);
-
 const productCustomFilters = ref({
   Brand: [],
   Interface: [],
@@ -95,37 +164,55 @@ const productCustomFilters = ref({
   GPUType: [],
   GPUSize: [],
 });
+const getProductFilers = async () => {
+  const items = Object.entries(productCustomFilters.value).reduce(
+    (prev, [key, values]) => {
+      if (values.length > 0) {
+        const keywords = Array.from(values)
+          .map((item) => JSON.stringify(item))
+          .join(",");
+        const condition = `${key}.in.(${keywords})`;
+        return [...prev, condition];
+      }
 
-// a computed ref
-watch(productCustomFilters.value, async (newValue) => {
-  const items = Object.entries(newValue).reduce((prev, [key, values]) => {
-    if (values.length > 0) {
-      const keywords = Array.from(values)
-        .map((item) => JSON.stringify(item))
-        .join(",");
-      const condition = `${key}.in.(${keywords})`;
-      return [...prev, condition];
-    }
+      return prev;
+    },
+    [],
+  );
 
-    return prev;
-  }, []);
-
-  console.log(items);
   if (items.length === 0) {
     productListing.value = null;
     return;
   }
 
-  const filters = {};
   if (items.length > 0) {
-    console.log("filters", items);
-    // hàm đeer lọc sản phẩm
-    const { data, error } = await getProductsByFilters(items.join(", "), 0);
-    // console.log(data);
+    const { data, error } = await getProductsByFilters(
+      items.join(", "),
+      (currentPage.value - 1) * 9,
+      props.slug.toLowerCase(),
+    );
+    const { data: dataSize } = await getProductsByFiltersSize(
+      items.join(", "),
+      props.slug.toLowerCase(),
+    );
+    if (dataSize) {
+      sizePage.value = Math.ceil(dataSize.length / 8);
+    }
     productListing.value = data;
     return;
   }
+};
+// a computed ref
+watch(productCustomFilters.value, async () => {
+  getProductFilers();
 });
+
+watch(
+  () => currentPage.value,
+  async () => {
+    getProductFilers();
+  },
+);
 </script>
 <style>
 .card-wrapper,

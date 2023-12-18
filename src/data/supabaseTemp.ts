@@ -16,25 +16,13 @@ const productCategories = [
   "RAMProducts",
   "SSDProducts",
 ];
-const productCategoriesSlug = {
-  cpus: productCategories[0],
-  gpus: productCategories[1],
-  mobos: productCategories[2],
-  ram: productCategories[3],
-  ssds: productCategories[4],
-};
-export const getProductsByFilters = async (
-  filters: string,
-  page: number,
-  slug: string,
-) =>
+
+export const getProductsByFilters = async (filters: string, page: number) =>
   supabase
-    .from(productCategoriesSlug[slug])
+    .from("CPUProducts")
     .select("*")
     .or(filters)
     .range(page, page + 8);
-export const getProductsByFiltersSize = async (filters: string, slug: string) =>
-  supabase.from(productCategoriesSlug[slug]).select("*").or(filters);
 
 // console.log(resutls);
 
