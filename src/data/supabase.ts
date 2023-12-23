@@ -24,6 +24,8 @@ const productCategoriesSlug = {
   ssds: productCategories[4],
 };
 export const getProductsByFilters = async (
+  // price [10,90]
+  price:number[],
   filters: string,
   page: number,
   slug: string,
@@ -33,7 +35,10 @@ export const getProductsByFilters = async (
     .select("*")
     .or(filters)
     .range(page, page + 8);
-export const getProductsByFiltersSize = async (filters: string, slug: string) =>
+export const getProductsByFiltersSize = async ( 
+  // price [10,90]
+  price:number[],
+  filters: string, slug: string) =>
   supabase.from(productCategoriesSlug[slug]).select("*").or(filters);
 
 // console.log(resutls);

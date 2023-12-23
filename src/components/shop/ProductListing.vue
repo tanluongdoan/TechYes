@@ -2,7 +2,10 @@
   <div :class="productWrapClass" class="pb-32">
     <aside class="sidebar">
       <div>
-        <PriceFilter />
+        <PriceFilter 
+        :productCustomFilters="productCustomFilters"
+        
+        />
       </div>
       <div v-for="(value, key) in props.productFilters" :key="key">
         <ProductFilter
@@ -147,6 +150,7 @@ const props = defineProps({
 });
 const productListing = ref(null);
 const productCustomFilters = ref({
+  price:[10,90],
   Brand: [],
   Interface: [],
   Supplier: [],
@@ -164,8 +168,11 @@ const productCustomFilters = ref({
   GPUType: [],
   GPUSize: [],
 });
+
 const getProductFilers = async () => {
-  const items = Object.entries(productCustomFilters.value).reduce(
+  const temArray = { ...productCustomFilters.value };
+  delete temArray.price
+  const items = Object.entries(temArray).reduce(
     (prev, [key, values]) => {
       if (values.length > 0) {
         const keywords = Array.from(values)
@@ -187,11 +194,13 @@ const getProductFilers = async () => {
 
   if (items.length > 0) {
     const { data, error } = await getProductsByFilters(
+      productCustomFilters.value.price,
       items.join(", "),
       (currentPage.value - 1) * 9,
       props.slug.toLowerCase(),
     );
     const { data: dataSize } = await getProductsByFiltersSize(
+      productCustomFilters.value.price,
       items.join(", "),
       props.slug.toLowerCase(),
     );
