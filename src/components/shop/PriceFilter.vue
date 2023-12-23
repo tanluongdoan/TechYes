@@ -26,7 +26,6 @@ onMounted(() => {
   var slider = document.getElementById("slider");
   noUiSlider.create(slider, {
     start: [props.productCustomFilters.price[0], props.productCustomFilters.price[1]],
-    start: [20, 80],
     connect: true,
     range: {
       min: 0,
