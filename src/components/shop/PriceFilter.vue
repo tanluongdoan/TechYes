@@ -29,7 +29,7 @@ onMounted(() => {
     connect: true,
     range: {
       min: 0,
-      max: 100,
+      max: 500000,
     },
   });
   slider.noUiSlider.on("change", (values, handle) => {

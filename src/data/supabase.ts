@@ -24,22 +24,44 @@ const productCategoriesSlug = {
   ssds: productCategories[4],
 };
 export const getProductsByFilters = async (
-  // price [10,90]
   price:number[],
   filters: string,
   page: number,
   slug: string,
 ) =>
-  supabase
-    .from(productCategoriesSlug[slug])
-    .select("*")
-    .or(filters)
-    .range(page, page + 8);
+
+  {
+    const minPrice = price[0];
+    const maxPrice = price[1];
+    const rep = supabase.from(productCategoriesSlug[slug]).select("*")
+    if(filters){
+      rep.or(filters)
+    }
+    if(page){
+      rep.range(page, page + 8);
+    }
+    if(minPrice && maxPrice){
+      rep.gte('SortPrice', minPrice)
+      rep.lte('SortPrice', maxPrice)
+    }
+    return rep
+  }
 export const getProductsByFiltersSize = async ( 
-  // price [10,90]
   price:number[],
   filters: string, slug: string) =>
-  supabase.from(productCategoriesSlug[slug]).select("*").or(filters);
+  {
+    const minPrice = price[0];
+    const maxPrice = price[1];
+    const rep = supabase.from(productCategoriesSlug[slug]).select("*")
+    if(filters){
+      rep.or(filters)
+    }
+    if(minPrice && maxPrice){
+      rep.gte('SortPrice', minPrice)
+      rep.lte('SortPrice', maxPrice)
+    }
+    return rep
+  }
 
 // console.log(resutls);
 
