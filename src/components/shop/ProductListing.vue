@@ -72,7 +72,6 @@ import ProductFilter from "@components/shop/ProductFilter.vue";
 import PriceFilter from "@components/shop/PriceFilter.vue";
 import supabase, {
   getProductsByFilters,
-  getProductsByFiltersSize,
 } from "@src/data/supabase";
 
 // pagination
@@ -92,6 +91,7 @@ const props = defineProps({
   slug: String,
 });
 const productListing = ref(null);
+const productData = ref(null);
 const productCustomFilters = ref({
   price: [0, 500000],
   Brand: [],
@@ -131,34 +131,15 @@ const getProductFilers = async () => {
     },
     [],
   );
-
-  // if (items.length === 0) {
-  //   productListing.value = null;
-  //   return;
-  // }
-
-  // if (items.length > 0) {
-
-  // }
-  console.log('filter')
-  const { data, error } = await getProductsByFilters(
-    productCustomFilters.value.price,
-    items.join(", "),
-    (currentPage.value - 1) * 9,
-    props.slug.toLowerCase(),
-  );
-  console.log("🚀 ~ file: ProductListing.vue:197 ~ getProductFilers ~ ata:", data)
-
-  const { data: dataSize } = await getProductsByFiltersSize(
+  const data= await getProductsByFilters(
     productCustomFilters.value.price,
     items.join(", "),
     props.slug.toLowerCase(),
   );
-  if (dataSize) {
-
-    sizePage.value = Math.ceil(dataSize.length / 8);
-  }
-  productListing.value = data;
+  productData.value = data;
+  let page = (currentPage.value - 1) * 9
+  productListing.value = data.slice(page, page + 8)
+  sizePage.value = Math.ceil(data.length / 8)
   return;
 };
 // a computed ref
